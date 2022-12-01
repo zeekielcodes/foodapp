@@ -1,7 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-red-400
+/* body {
+  @apply
+} */
+
+h1 {
+  @apply font-[Inter]
+}
+
+h2 {
+  @apply font-[Great]
+}
+
+nav {
+  @apply bg-[#0D0D0D] text-white flex justify-between items-center px-40 py-4
+}
+
+nav ul {
+  @apply flex gap-6
 }
