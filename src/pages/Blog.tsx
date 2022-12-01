@@ -1,8 +1,11 @@
 import React from 'react'
+import Banner from '../components/Banner'
 
 function Blog() {
   return (
-    <div>Blog</div>
+    <div>
+         <Banner pageName="Blog" page="Blog"/>
+    </div>
   )
 }
 

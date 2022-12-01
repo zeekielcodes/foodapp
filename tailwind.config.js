@@ -12,6 +12,9 @@ module.exports = {
         "LightHelvetica": "Helvetica-Light",
         "ObliqueHelvetica": "Helvetica-Oblique",
         "Helvetica": "Helvetica"
+      },
+      backgroundImage: {
+        "banner": "url('./assets/images/banner.png')"
       }
     },
   },

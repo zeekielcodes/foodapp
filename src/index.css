@@ -24,9 +24,9 @@
   src: url("./assets/fonts/Helvetica.ttf");  
 }
 
-/* body {
-  @apply
-} */
+body {
+  @apply font-Helvetica
+}
 
 h1 {
   @apply font-Inter
@@ -41,9 +41,97 @@ nav {
 }
 
 nav ul {
-  @apply flex gap-6
+  @apply flex gap-6 font-Inter
 }
 
 nav ul .active {
   @apply text-[#FF9F0D]
+}
+
+nav .icons {
+  @apply flex gap-4
+}
+
+.header {
+  @apply flex flex-col justify-center items-center bg-banner h-[250px] bg-bottom bg-cover
+}
+
+.header h1 {
+  @apply text-[48px] font-bold text-white
+}
+
+.header p {
+  @apply flex gap-2 font-Inter items-center text-[#FF9F0D] text-[14px] font-extralight
+}
+
+.header a {
+  @apply text-white flex items-center gap-2
+}
+
+footer {
+  @apply bg-[#0D0D0D] text-white px-40 py-8
+}
+
+footer .newsletter {
+  @apply flex justify-between items-center py-8 border-b-2 border-[#FF9F0D]
+}
+
+footer .cta h4 {
+  @apply text-[32px] font-BoldHelvetica mb-2
+}
+
+footer .change {
+  @apply text-[#FF9F0D]
+}
+
+footer .cta p {
+  @apply text-[16px] font-normal
+}
+
+footer .newsletter form {
+  @apply h-[45px] flex rounded overflow-hidden
+}
+
+footer .newsletter form input {
+  @apply h-full w-[250px] bg-[#FF9F0D] border-none placeholder:text-white outline-none text-white pl-4
+}
+
+footer .newsletter form button {
+  @apply h-full bg-white text-[#FF9F0D] px-8
+}
+
+footer .footer {
+  @apply flex justify-between py-8
+}
+
+footer .footer h5 {
+  @apply text-[20px] mb-4 font-BoldHelvetica
+}
+
+.footer ul li {
+  @apply mb-4 text-[16px]
+}
+
+footer .footer div {
+  @apply w-1/4
+}
+
+.footer .company p {
+  @apply text-[18px]
+}
+
+.acknowledgement {
+  @apply flex justify-between items-center bg-[#4F4F4F] text-white py-6 px-40
+}
+
+.acknowledgement .socials {
+  @apply flex gap-2
+}
+
+.acknowledgement p {
+  @apply text-[16px]
+}
+
+.acknowledgement .socials a {
+  @apply bg-white text-black p-2 text-black hover:text-[#FF9F0D]
 }

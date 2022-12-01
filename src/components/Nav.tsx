@@ -2,6 +2,9 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from "../assets/Foodtuck.png"
 
+import { BiUser, BiShoppingBag } from "react-icons/bi"
+import { FiSearch } from "react-icons/fi"
+
 const Nav = () => {
   return (
     <nav>
@@ -16,7 +19,9 @@ const Nav = () => {
             <li><NavLink to="/contact">Contact</NavLink></li>
         </ul>
         <div className="icons">
-            <button>Cart</button>
+            <button><FiSearch /></button>
+            <button><BiUser /></button>
+            <button><BiShoppingBag /></button>
         </div>
     </nav>
   )
