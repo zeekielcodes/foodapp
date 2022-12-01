@@ -7,7 +7,11 @@ module.exports = {
     extend: {
       fontFamily: {
         "Inter": "Inter",
-        "Great": "Great+Vibes"
+        "Great": "Great Vibes",
+        "BoldHelvetica": "Helvetica-Bold",
+        "LightHelvetica": "Helvetica-Light",
+        "ObliqueHelvetica": "Helvetica-Oblique",
+        "Helvetica": "Helvetica"
       }
     },
   },

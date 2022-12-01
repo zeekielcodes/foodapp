@@ -4,16 +4,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Helvetica-Bold";
+  src: url("./assets/fonts/Helvetica-Bold.ttf");  
+}
+
+@font-face {
+  font-family: "Helvetica-Light";
+  src: url("./assets/fonts/helvetica-light-587ebe5a59211.ttf");  
+}
+
+@font-face {
+  font-family: "Helvetica-Oblique";
+  src: url("./assets/fonts/Helvetica-Oblique.ttf");  
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("./assets/fonts/Helvetica.ttf");  
+}
+
 /* body {
   @apply
 } */
 
 h1 {
-  @apply font-[Inter]
+  @apply font-Inter
 }
 
 h2 {
-  @apply font-[Great]
+  @apply font-Helvetica
 }
 
 nav {
@@ -22,4 +42,8 @@ nav {
 
 nav ul {
   @apply flex gap-6
+}
+
+nav ul .active {
+  @apply text-[#FF9F0D]
 }
