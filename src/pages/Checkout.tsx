@@ -1,12 +1,12 @@
 import React from 'react'
 import Banner from '../components/Banner'
 
-function Blog() {
+function Checkout() {
   return (
     <div>
-         <Banner pageName="Blog List" page="Blog"/>
+        <Banner pageName="Checkout Page" page="Checkout"/>
     </div>
   )
 }
 
-export default Blog
+export default Checkout

@@ -7,7 +7,7 @@ function Banner({pageName, page}:BannerProps) {
   return (
     <div className='header'>
         <h1>{pageName}</h1>
-        <p><Link to="/">Home <FaGreaterThan /></Link> {page}</p>
+        <p><Link to="/">Home &nbsp;&#062;</Link> {page}</p>
     </div>
   )
 }

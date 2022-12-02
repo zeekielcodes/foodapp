@@ -7,6 +7,11 @@ import Menu from './pages/Menu'
 import Contact from './pages/Contact'
 import About from './pages/About'
 import Blog from './pages/Blog'
+import Shop from './pages/Shop'
+import Pages from './pages/Pages'
+import Cart from './pages/Cart'
+import Checkout from './pages/Checkout'
+import Error from './pages/Error'
 
 function App() {
   return (
@@ -19,6 +24,11 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<About />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/pages" element={<Pages />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/*" element={<Error />} />
         </Routes>
       <Footer />
       </Router>

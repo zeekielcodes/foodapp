@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 import { ImFacebook } from "react-icons/im"
-import { BsTwitter, BsInstagram, BsYoutube, BsPinterest } from "react-icons/bs"
+import { BsTwitter, BsInstagram, BsYoutube, BsPinterest, BsClockHistory } from "react-icons/bs"
 
 function Footer() {
   return (<>
@@ -19,7 +19,17 @@ function Footer() {
         <div className="footer">
             <div className="company">
                 <h5>About Us</h5>
-                <p>Corporate clients and leisure travelers hasbeen relying on Groundlink for dependablesafe, and professional chauffeured carservice in major cities across World.</p>
+                <p className='about'>Corporate clients and leisure travelers hasbeen relying on Groundlink for dependablesafe, and professional chauffeured carservice in major cities across World.</p>
+                <section className="time">
+                    <div className="clock-icon">
+                        <BsClockHistory />
+                    </div>
+                    <div>
+                        <h6>Opening Houres</h6>
+                        <p>Mon - Sat(8.00 - 6.00)</p>
+                        <p>Sunday - Closed</p>
+                    </div>
+                </section>
             </div>
             <ul>
                 <h5>Useful Links</h5>

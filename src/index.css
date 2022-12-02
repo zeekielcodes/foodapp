@@ -116,7 +116,7 @@ footer .footer div {
   @apply w-1/4
 }
 
-.footer .company p {
+.footer .company p.about {
   @apply text-[18px]
 }
 
@@ -129,9 +129,29 @@ footer .footer div {
 }
 
 .acknowledgement p {
-  @apply text-[16px]
+  @apply text-[16px] font-Inter
 }
 
 .acknowledgement .socials a {
   @apply bg-white text-black p-2 text-black hover:text-[#FF9F0D]
+}
+
+section.time {
+  @apply flex gap-2 items-center mt-4 font-Inter rounded overflow-hidden
+}
+
+section.time div {
+  @apply w-auto
+}
+
+.company section.time div h6 {
+  @apply text-sm
+}
+
+section.time div p {
+  @apply text-xs mt-2
+}
+
+.clock-icon {
+  @apply bg-[#FF9F0D] text-5xl flex justify-center items-center p-4
 }
