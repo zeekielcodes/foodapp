@@ -12,6 +12,9 @@ import Pages from './pages/Pages'
 import Cart from './pages/Cart'
 import Checkout from './pages/Checkout'
 import Error from './pages/Error'
+import Login from './pages/auth/Login'
+import SignUp from './pages/auth/SignUp'
+import Chefs from './pages/Chefs'
 // import { ShopContext } from "./components/StoreContext"
 
 function App() {
@@ -30,6 +33,9 @@ function App() {
           <Route path="/pages" element={<Pages />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/chefs" element={<Chefs />} />
           <Route path="/*" element={<Error />} />
         </Routes>
       <Footer />

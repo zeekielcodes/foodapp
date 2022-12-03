@@ -20,8 +20,8 @@ const Nav = () => {
         </ul>
         <div className="icons">
             <button><FiSearch /></button>
-            <button><BiUser /></button>
-            <button><BiShoppingBag /></button>
+            <Link to="/login"><BiUser /></Link> 
+            <Link to="/cart"><BiShoppingBag /></Link>
         </div>
     </nav>
   )

@@ -13,8 +13,11 @@ module.exports = {
         "ObliqueHelvetica": "Helvetica-Oblique",
         "Helvetica": "Helvetica"
       },
+      colors: {
+      },
       backgroundImage: {
-        "banner": "url('./assets/images/banner.png')"
+        "banner": "url('./assets/images/banner.png')",
+        "form": "0px 4px 80px rgba(255, 159, 13, 0.15)"
       }
     },
   },
