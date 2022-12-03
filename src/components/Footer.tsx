@@ -33,19 +33,19 @@ function Footer() {
             </div>
             <ul>
                 <h5>Useful Links</h5>
-                <li><Link to="/">About</Link></li>
+                <li><Link to="/about">About</Link></li>
                 <li><Link to="/">News</Link></li>
                 <li><Link to="/">Partners</Link></li>
                 <li><Link to="/">Team</Link></li>
-                <li><Link to="/">Menu</Link></li>
-                <li><Link to="/">Contact</Link></li>
+                <li><Link to="/menu">Menu</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
             </ul>
             <ul>
                 <h5>Help?</h5>
-                <li><Link to="/">FAQ</Link></li>
-                <li><Link to="/">Terms & Condition</Link></li>
+                <li><Link to="/faqs">FAQ</Link></li>
+                <li><Link to="/tac">Terms & Condition</Link></li>
                 <li><Link to="/">Reporting</Link></li>
-                <li><Link to="/">Documentation</Link></li>
+                <li><Link to="/docs">Documentation</Link></li>
                 <li><Link to="/">Support Policy</Link></li>
                 <li><Link to="/">Privacy</Link></li>
             </ul>

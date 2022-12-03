@@ -19,7 +19,7 @@
 }
 
 .auth form button {
-    @apply py-2 w-full
+    @apply py-2 w-full mt-4
 }
 
 .auth form .break {
@@ -39,7 +39,7 @@
 }
 
 .auth form .auths button {
-    @apply h-full 
+    @apply h-full mt-0
 }
 
 .auth form p {

@@ -20,6 +20,7 @@ function Login() {
                     <FiLock />
                     <input type="password" name="password" placeholder='Password' id="password" />
                 </div>
+                <input type="checkbox" name="remember" id="remember" /> &nbsp;Rememeber me ?
                 <button type="submit" className='bg-[#FF9F0D] border-none text-white'>Sign in</button>
                 <p><Link to="/">Forgot password ?</Link></p>
 

@@ -15,6 +15,7 @@ import Error from './pages/Error'
 import Login from './pages/auth/Login'
 import SignUp from './pages/auth/SignUp'
 import Chefs from './pages/Chefs'
+import FAQs from './pages/FAQs'
 // import { ShopContext } from "./components/StoreContext"
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/chefs" element={<Chefs />} />
+          <Route path="/faqs" element={<FAQs />} />
           <Route path="/*" element={<Error />} />
         </Routes>
       <Footer />

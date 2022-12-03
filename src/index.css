@@ -175,3 +175,23 @@ section.time div p {
 .errorpage a {
   @apply bg-[#FF9F0D] text-white px-6 py-2 text-[18px] font-BoldHelvetica
 }
+
+.nameNprice {
+  @apply flex justify-between items-center mb-2
+}
+
+.nameNprice h3:nth-child(2) {
+  @apply text-[#FF9F0D]
+}
+
+.nameNprice h3 {
+  @apply text-[24px] hover:text-[#FF9F0D]
+}
+
+.singlemenu p {
+  @apply text-[16px] font-Helvetica text-[#4F4F4F]
+}
+
+.singlemenu p:nth-child(2) {
+  @apply text-[#828282]
+}
