@@ -4,7 +4,7 @@ import Banner from '../components/Banner'
 function Shop() {
   return (
     <div>
-        <Banner pageName="Shop" page="Shop"/>
+        <Banner pageName="Our Shop" page="Shop"/>
     </div>
   )
 }

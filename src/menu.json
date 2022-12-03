@@ -1,0 +1,106 @@
+{
+    "starter": [
+        {
+            "name": "Alder Grilled Chinook Salmon",
+            "ingredient": "Toasted French bread topped with romano, cheddar",
+            "price": 32,
+            "calories": "560 CAL"
+        },
+        {
+            "name": "Berries and creme tart",
+            "ingredient": "Gorgonzola, ricotta, mozzarella, taleggio",
+            "price": 43,
+            "calories": "700 CAL"
+        },
+        {
+            "name": "Tormentoso Bush Pizza Pintoage",
+            "ingredient": "Ground cumin, avocados, peeled and cubed",
+            "price": 14,
+            "calories": "1000 CAL"
+        },
+        {
+            "name": "Spicy Vegan Potato Curry",
+            "ingredient": "Spreadable cream cheese, crumbled blue cheese",
+            "price": 35,
+            "calories": "560 CAL"
+        }
+    ],
+    "main": [
+        {
+            "name": "Optic Big Breakfast Combo Menu",
+            "ingredient": "Toasted French bread topped with romano, cheddar",
+            "price": 32,
+            "calories": "560 CAL"
+        },
+        {
+            "name": "Cashew Chicken With Stir-Fry",
+            "ingredient": "Gorgonzola, ricotta, mozzarella, taleggio",
+            "price": 43,
+            "calories": "700 CAL"
+        },
+        {
+            "name": "Vegetables & Green Salad",
+            "ingredient": "Ground cumin, avocados, peeled and cubed",
+            "price": 14,
+            "calories": "1000 CAL"
+        },
+        {
+            "name": "Spicy Vegan Potato Curry",
+            "ingredient": "Spreadable cream cheese, crumbled blue cheese",
+            "price": 35,
+            "calories": "560 CAL"
+        }
+    ],
+    "dessert": [
+        {
+            "name": "Fig and lemon cake",
+            "ingredient": "Toasted French bread topped with romano, cheddar",
+            "price": 32,
+            "calories": "560 CAL"
+        },
+        {
+            "name": "Creamy mascarpone cake",
+            "ingredient": "Gorgonzola, ricotta, mozzarella, taleggio",
+            "price": 43,
+            "calories": "700 CAL"
+        },
+        {
+            "name": "Pastry, blueberries, lemon juice",
+            "ingredient": "Ground cumin, avocados, peeled and cubed",
+            "price": 14,
+            "calories": "1000 CAL"
+        },
+        {
+            "name": "Pain au chocolat",
+            "ingredient": "Spreadable cream cheese, crumbled blue cheese",
+            "price": 35,
+            "calories": "560 CAL"
+        }
+    ],
+    "drinks": [
+        {
+            "name": "Caffè macchiato",
+            "ingredient": "Toasted French bread topped with romano, cheddar",
+            "price": 32,
+            "calories": "560 CAL"
+        },
+        {
+            "name": "Aperol Spritz Capacianno",
+            "ingredient": "Gorgonzola, ricotta, mozzarella, taleggio",
+            "price": 43,
+            "calories": "700 CAL"
+        },
+        {
+            "name": "Caffe Latte Campuri",
+            "ingredient": "Ground cumin, avocados, peeled and cubed",
+            "price": 14,
+            "calories": "1000 CAL"
+        },
+        {
+            "name": "Tormentoso BushTea Pintoage",
+            "ingredient": "Spreadable cream cheese, crumbled blue cheese",
+            "price": 35,
+            "calories": "560 CAL"
+        }
+    ]
+}

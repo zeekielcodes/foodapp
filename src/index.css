@@ -155,3 +155,23 @@ section.time div p {
 .clock-icon {
   @apply bg-[#FF9F0D] text-5xl flex justify-center items-center p-4
 }
+
+.errorpage {
+  @apply px-8 py-16  flex flex-col justify-center items-center
+}
+
+.errorpage h1 {
+  @apply text-[96px] text-[#FF9F0D] font-BoldHelvetica
+}
+
+.errorpage h2 {
+  @apply text-[32px] font-BoldHelvetica
+}
+
+.errorpage p {
+  @apply text-[18px] font-Inter my-4 w-2/5 text-center text-[#4F4F4F]
+}
+
+.errorpage a {
+  @apply bg-[#FF9F0D] text-white px-6 py-2 text-[18px] font-BoldHelvetica
+}

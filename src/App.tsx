@@ -12,10 +12,12 @@ import Pages from './pages/Pages'
 import Cart from './pages/Cart'
 import Checkout from './pages/Checkout'
 import Error from './pages/Error'
+// import { ShopContext } from "./components/StoreContext"
 
 function App() {
   return (
     <main>
+      {/* <ShopContext> */}
       <Router>
       <Nav />
         <Routes>
@@ -32,6 +34,7 @@ function App() {
         </Routes>
       <Footer />
       </Router>
+      {/* </ShopContext> */}
     </main>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import logo from "../assets/Foodtuck.png"
 
 import { BiUser, BiShoppingBag } from "react-icons/bi"
@@ -8,7 +8,7 @@ import { FiSearch } from "react-icons/fi"
 const Nav = () => {
   return (
     <nav>
-        <img src={logo} alt="" />
+        <Link to="/"><img src={logo} alt="" /></Link>
         <ul>
             <li><NavLink to="/" end>Home</NavLink></li>
             <li><NavLink to="/menu">Menu</NavLink></li>
