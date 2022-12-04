@@ -21,7 +21,7 @@ function MidMenuBanner() {
             <div>
                 <img src={group} alt="" />
                 <h5>30+</h5>
-                <p>Years Of Experienced</p>
+                <p>Years Of Experience</p>
             </div>
             <div>
                 <img src={group1} alt="" />

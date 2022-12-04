@@ -6,43 +6,30 @@
             "price": 38,
             "mainPrice": 45,
             "category": "",
-            "ratings": 2,
-            "images": [],
-            "reviews": [
-                {
-                    "author": "John Doe",
-                    "comment": "Nam tristique porta ligula, vel viverra sem eleifend nec. Nulla sed purus augue, eu euismod tellus.",
-                    "rate": 4,
-                    "verifiedBuyer": true
-                }
-            ],
-            "description": {
-                "describe": [
-                    "Nam tristique porta ligula, vel viverra sem eleifend nec. Nulla sed purus augue, eu euismod tellus. Nam mattis eros nec mi sagittis sagittis. Vestibulum suscipit cursus bibendum. Integer at justo eget sem auctor auctor eget vitae arcu. Nam tempor malesuada porttitor. Nulla quis dignissim ipsum. Aliquam pulvinar iaculis justo, sit amet interdum sem hendrerit vitae. Vivamus vel erat tortor. Nulla facilisi. In nulla quam, lacinia eu aliquam ac, aliquam in nisl.",
-                    "Nam tristique porta ligula, vel viverra sem eleifend nec. Nulla sed purus augue, eu euismod tellus. Nam mattis eros nec mi sagittis sagittis. Vestibulum suscipit cursus bibendum. Integer at justo eget sem auctor auctor eget vitae arcu. Nam tempor malesuada porttitor. Nulla quis dignissim ipsum. Aliquam pulvinar iaculis justo, sit amet interdum sem hendrerit vitae. Vivamus vel erat tortor. Nulla facilisi. In nulla quam, lacinia eu aliquam ac, aliquam in nisl."
-                ],
-                "benefits": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                    "Maecenas ullamcorper est et massa mattis condimentum.",
-                    "Vestibulum sed massa vel ipsum imperdiet malesuada id tempus nisl.",
-                    "Etiam nec massa et lectus faucibus ornare congue in nunc.",
-                    "Mauris eget diam magna, in blandit turpis."
-                ]
-            }
+            "ratings": 2
+        
         },
         {
             "name": "Chocolate Muffin",
             "image": "",
             "price": 28,
-            "mainPrice": null,
+            
             "category": "",
             "ratings": 2
         },
         {
             "name": "Burger",
             "image": "",
+            "price": 21,
+            "mainPrice": 45,
+            "category": "",
+            "ratings": 2
+        },
+        {
+            "name": "Country Burger",
+            "image": "",
             "price": 45,
-            "mainPrice": null,
+            
             "category": "",
             "ratings": 2
         },
@@ -50,7 +37,7 @@
             "name": "Drink",
             "image": "",
             "price": 23,
-            "mainPrice": null,
+            "mainPrice": 45,
             "category": "drink",
             "ratings": 2
         },
@@ -58,7 +45,7 @@
             "name": "Pizza",
             "image": "",
             "price": 43,
-            "mainPrice": null,
+            
             "category": "pizza",
             "ratings": 2
         },
@@ -66,7 +53,7 @@
             "name": "Cheese Butter",
             "image": "",
             "price": 10,
-            "mainPrice": null,
+            
             "category": "",
             "ratings": 2
         },
@@ -74,7 +61,7 @@
             "name": "Sandwiches",
             "image": "",
             "price": 25,
-            "mainPrice": null,
+            
             "category": "sandwiches",
             "ratings": 2
         },
@@ -82,7 +69,7 @@
             "name": "Chicken Chup",
             "image": "",
             "price": 12,
-            "mainPrice": null,
+            
             "category": "chicken chup",
             "ratings": 2
         }
