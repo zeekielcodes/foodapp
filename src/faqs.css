@@ -7,7 +7,7 @@
 }
 
 .faqs .questions-container {
-    @apply grid grid-cols-2 gap-8 mt-8
+    @apply grid grid-cols-2 gap-8 mt-8 w-full
 }
 
 .faqs .questions-container .singlefaq {

@@ -3,7 +3,7 @@
 }
 
 .auth form {
-    @apply p-8 shadow-md w-2/5
+    @apply p-8 shadow-form w-2/5
 }
 
 .auth form h2 {

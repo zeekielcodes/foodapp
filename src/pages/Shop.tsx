@@ -5,6 +5,9 @@ function Shop() {
   return (
     <div>
         <Banner pageName="Our Shop" page="Shop"/>
+        <div className="shop">
+          Sort by: 
+        </div>
     </div>
   )
 }

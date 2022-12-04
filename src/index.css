@@ -176,8 +176,28 @@ section.time div p {
   @apply bg-[#FF9F0D] text-white px-6 py-2 text-[18px] font-BoldHelvetica
 }
 
+.menu {
+  @apply px-40 py-20
+}
+
+.menu h2 {
+  @apply text-[48px] font-BoldHelvetica mb-2
+}
+
+.each-menu {
+   @apply flex gap-12 justify-between items-center
+}
+
+.each-menu img {
+  @apply w-2/5 h-full
+}
+
+.each-menu .menu-list {
+  @apply w-3/5
+}
+
 .nameNprice {
-  @apply flex justify-between items-center mb-2
+  @apply flex justify-between items-center font-BoldHelvetica
 }
 
 .nameNprice h3:nth-child(2) {
@@ -188,10 +208,42 @@ section.time div p {
   @apply text-[24px] hover:text-[#FF9F0D]
 }
 
+.singlemenu {
+  @apply my-2 shadow-md p-4
+}
+
 .singlemenu p {
   @apply text-[16px] font-Helvetica text-[#4F4F4F]
 }
 
 .singlemenu p:nth-child(2) {
   @apply text-[#828282]
+}
+
+.partners {
+  @apply flex flex-col justify-center items-center py-20
+}
+
+.partners p {
+  @apply font-Inter text-[18px]
+}
+
+.partners h6 {
+  @apply text-[32px] mb-4 font-BoldHelvetica
+}
+
+.partners .brands {
+  @apply flex gap-6 mt-4
+}
+
+.mid-menu {
+  @apply bg-banner2 relative h-[350px] bg-bottom bg-cover
+}
+
+.mid-menu .overlay {
+  @apply flex justify-between font-BoldHelvetica px-40 text-center text-white items-center absolute top-0 left-0 bottom-0 right-0 bg-[rgba(0,0,0,0.7)]
+}
+
+.mid-menu .overlay div h5 {
+  @apply my-2 text-[40px]
 }
