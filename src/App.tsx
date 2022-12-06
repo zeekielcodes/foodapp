@@ -17,12 +17,12 @@ import SignUp from './pages/auth/SignUp'
 import Chefs from './pages/Chefs'
 import FAQs from './pages/FAQs'
 import ProductDetails from './pages/ProductDetails'
-// import { ShopContext } from "./components/StoreContext"
+// import { StoreContext } from "./components/StoreContext"
 
 function App() {
   return (
     <main>
-      {/* <ShopContext> */}
+      {/* <StoreContext> */}
       <Router>
       <Nav />
         <Routes>
@@ -44,7 +44,7 @@ function App() {
         </Routes>
       <Footer />
       </Router>
-      {/* </ShopContext> */}
+      {/* </StoreContext> */}
     </main>
   )
 }
