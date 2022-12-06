@@ -7,7 +7,15 @@
 }
 
 .shop .store select {
-    @apply px-6 py-2 border rounded mx-4 text-[#0D0D0D]
+    @apply px-6 py-2 border rounded mx-4 text-[#0D0D0D] bg-none bg-transparent
+}
+
+.shop .store .pagination {
+    @apply flex gap-4 justify-center items-center my-4
+}
+
+.shop .store .pagination button {
+    @apply shadow w-[40px] h-[40px] font-medium hover:bg-[#FF9F0D] hover:text-white flex justify-center items-center text-[#FF9F0D]
 }
 
 .shop .filter {

@@ -4,7 +4,9 @@ import SingleShopFood from '../components/SingleShopFood'
 import foods from "../shop.json"
 import { Link } from "react-router-dom"
 import { FiSearch } from "react-icons/fi"
-import { BsFillArrowRightCircleFill } from "react-icons/bs"
+import { BsArrowRightCircle } from "react-icons/bs"
+import { RxDoubleArrowLeft, RxDoubleArrowRight } from "react-icons/rx"
+import { MdOutlineDoubleArrow } from "react-icons/md"
 
 function Shop() {
   return (
@@ -20,6 +22,13 @@ function Shop() {
            </select>
            <div className="foods">
             {foods.products.map(food => <SingleShopFood name={food.name} image={food.image} price={food.price} mainPrice={food.mainPrice} category={food.category} ratings={food.ratings}/>)}
+           </div>
+           <div className="pagination">
+            <button><RxDoubleArrowLeft /></button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button><RxDoubleArrowRight /></button>
            </div>
           </div>
           <div className="filter">
@@ -40,7 +49,7 @@ function Shop() {
               <h4>Perfect Taste</h4>
               <h5>Classic Restaurant</h5>
               <h6>45.00$</h6>
-              <Link to="/">Shop Now <BsFillArrowRightCircleFill /></Link>
+              <Link to="/">Shop Now <BsArrowRightCircle /></Link>
             </div>
             <h3>Filter By Price</h3>
             <input type="range" name="filter" id="price" className='range' value={80} />
