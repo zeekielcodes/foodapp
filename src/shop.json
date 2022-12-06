@@ -2,7 +2,7 @@
     "products":  [
         {
             "name": "Fresh Lime",
-            "image": "",
+            "image": "fresh-lime.png",
             "price": 38,
             "mainPrice": 45,
             "category": "",
@@ -11,7 +11,7 @@
         },
         {
             "name": "Chocolate Muffin",
-            "image": "",
+            "image": "muffin.png",
             "price": 28,
             
             "category": "",
@@ -19,23 +19,23 @@
         },
         {
             "name": "Burger",
-            "image": "",
+            "image": "burger.png",
             "price": 21,
             "mainPrice": 45,
-            "category": "",
+            "category": "Burger",
             "ratings": 2
         },
         {
             "name": "Country Burger",
-            "image": "",
+            "image": "burger2.png",
             "price": 45,
             
-            "category": "",
+            "category": "Burger",
             "ratings": 2
         },
         {
             "name": "Drink",
-            "image": "",
+            "image": "drinks.png",
             "price": 23,
             "mainPrice": 45,
             "category": "drink",
@@ -43,7 +43,7 @@
         },
         {
             "name": "Pizza",
-            "image": "",
+            "image": "pizza.png",
             "price": 43,
             
             "category": "pizza",
@@ -51,7 +51,7 @@
         },
         {
             "name": "Cheese Butter",
-            "image": "",
+            "image": "cheesebutter.png",
             "price": 10,
             
             "category": "",
@@ -59,7 +59,7 @@
         },
         {
             "name": "Sandwiches",
-            "image": "",
+            "image": "sandwich.png",
             "price": 25,
             
             "category": "sandwiches",
@@ -67,7 +67,7 @@
         },
         {
             "name": "Chicken Chup",
-            "image": "",
+            "image": "chup.png",
             "price": 12,
             
             "category": "chicken chup",

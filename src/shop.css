@@ -14,12 +14,64 @@
     @apply w-1/4 shadow p-4
 }
 
+.shop .filter .searchbox {
+    @apply bg-[rgba(255,159,13,0.1)] flex w-full h-[40px] items-center
+}
+
+.shop .filter .searchbox input {
+    @apply w-full bg-none bg-transparent h-full text-[14px] px-2
+}
+
+.shop .filter .searchbox button {
+    @apply bg-[#FF9F0D] text-white h-full w-[50px] text-[18px] flex justify-center items-center
+}
+
+.shop .filter h3 {
+    @apply font-BoldHelvetica text-[20px] my-2
+}
+
+.shop .filter input {
+    @apply my-2
+}
+
+.shop .filter .store-cta {
+    @apply p-4 bg-store h-[250px] w-full text-white my-4 font-Inter relative
+}
+
+.shop .filter .store-cta h5 {
+    @apply text-[18px] font-Helvetica
+}
+
+.shop .filter .store-cta h6 {
+    @apply text-[#FF9F0D] font-bold
+}
+
+.shop .filter .store-cta a {
+    @apply absolute bottom-5 flex items-center gap-2
+}
+
+.shop .filter .range {
+    @apply w-full accent-[#FF9F0D] bg-white
+}
+
 .shop .store .foods {
     @apply flex gap-4 flex-wrap py-8
 }
 
 .foods .each-food {
-    @apply w-[31%] shadow
+    @apply w-[31%] relative
+}
+
+.foods .each-food .buttons {
+    @apply absolute top-0 left-0 right-0 bottom-0 hidden
+}
+
+.foods .each-food .buttons button {
+    @apply bg-white p-2 text-[#FF9F0D] hover:bg-[#FF9F0D] hover:text-white
+}
+
+.foods .each-food:hover .buttons {
+    @apply flex justify-center items-center gap-4
 }
 
 .foods .each-food h3 {

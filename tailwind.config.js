@@ -17,7 +17,9 @@ module.exports = {
       },
       backgroundImage: {
         "banner": "url('./assets/images/banner.png')",
-        "banner2": "url('./assets/images/banner2.png')"
+        "banner2": "url('./assets/images/banner2.png')",
+        "store": "url('./assets/images/ad.png')"
+
       },
       boxShadow: {
         "form": "0px 4px 80px rgba(255, 159, 13, 0.15)"
