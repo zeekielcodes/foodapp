@@ -21,7 +21,7 @@ function Shop() {
             <option value="default">Default</option>
            </select>
            <div className="foods">
-            {foods.products.map(food => <SingleShopFood name={food.name} image={food.image} price={food.price} mainPrice={food.mainPrice} category={food.category} ratings={food.ratings}/>)}
+            {foods.products.map(food => <SingleShopFood name={food.name} id={food.id} image={food.image} price={food.price} mainPrice={food.mainPrice} category={food.category} ratings={food.ratings}/>)}
            </div>
            <div className="pagination">
             <button><RxDoubleArrowLeft /></button>

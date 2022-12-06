@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 import { BiShoppingBag, BiHeart } from "react-icons/bi"
 import { TbRepeat } from "react-icons/tb"
 
 interface Props {
+    id:number,
     name: string,
     image:string,
     price:number,
@@ -12,17 +14,19 @@ interface Props {
     // images: [],
 }
 
-function SingleShopFood({name, image, price, mainPrice, category, ratings}:Props) {
+function SingleShopFood({id, name, image, price, mainPrice, category, ratings}:Props) {
   return (
     <div className='each-food'>
         <img src={require(`../assets/images/${image}`)} alt="" />
         <h3>{name}</h3>
         <h4>${price.toFixed(2)} <span>{mainPrice ? "$"+mainPrice.toFixed(2) : null}</span></h4>
-        <div className="buttons">
+        <Link to={`/shop/${id}`}>
+          <div className="buttons">
             <button><TbRepeat /></button>
             <button><BiShoppingBag /></button>
             <button><BiHeart /></button>
         </div>
+        </Link>
     </div>
   )
 }

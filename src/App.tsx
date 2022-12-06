@@ -16,6 +16,7 @@ import Login from './pages/auth/Login'
 import SignUp from './pages/auth/SignUp'
 import Chefs from './pages/Chefs'
 import FAQs from './pages/FAQs'
+import ProductDetails from './pages/ProductDetails'
 // import { ShopContext } from "./components/StoreContext"
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/pages" element={<Pages />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/shop/:id" element={<ProductDetails />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
