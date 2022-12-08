@@ -7,6 +7,12 @@ function ProductDetails() {
     const [id, setId] = useState<number>()
     const history = useParams()
     console.log(history);
+
+    // useEffect(()=> {
+    //   const firestore = getCities()
+    //   console.log(firestore);
+      
+    // }, [])
     
 
     // useEffect(() => {
