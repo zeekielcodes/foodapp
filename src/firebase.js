@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore/lite';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
+import { getFirestore, collection, getDocs, addDoc, doc, setDoc } from 'firebase/firestore/lite';
 // TODO: Replace the following with your app's Firebase project configuration
 
 // Follow this pattern to import other Firebase services
@@ -17,6 +18,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 const db = getFirestore(app);
 const usersCollection = collection(db, "users")
 
@@ -29,7 +31,25 @@ const usersCollection = collection(db, "users")
 // }
 
 export const createUser = user => {
-   return addDoc(usersCollection, user);
+    createUserWithEmailAndPassword(auth, user.email, user.password)
+  .then((userCredential) => {
+    const createdUser = userCredential.user;
+    return setDoc(doc(db, "users", createdUser.uid), {
+      Name: user.name
+    })
+    // usersCollection.doc(user.id).set({
+    //     "Name": user.name
+    // })
+    // addDoc(usersCollection, user);
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(error);
+    // ..
+  });
+   
 }
 
 // export default getCities;
