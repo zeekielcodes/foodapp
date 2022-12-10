@@ -1,24 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Banner from '../../components/Banner'
 import { Link } from "react-router-dom"
 import { FcGoogle} from "react-icons/fc"
 import { BsApple } from "react-icons/bs"
 import { FiLock, FiMail } from "react-icons/fi"
+import { signInUser } from '../../firebase'
 
 function Login() {
+    const [email, setEmail] = useState<string>("")
+    const [password, setPassword] = useState<string>("")
+
+    const signIn = (e:React.FormEvent) => {
+        e.preventDefault()
+        const user = {email, password}
+        signInUser(user)
+    }
+
   return (
     <div>
         <Banner pageName="Sign in" page="Sign in"/>
         <div className="auth">
-            <form>
+            <form onSubmit={signIn}>
                 <h2>Sign In</h2>
                 <div className="inputfield">
                     <FiMail />
-                    <input type="email" name="email" placeholder='Email' id="email" />
+                    <input type="email" onChange={(e) => setEmail(e.target.value)} name="email" placeholder='Email' id="email" />
                 </div>
                 <div className="inputfield">
                     <FiLock />
-                    <input type="password" name="password" placeholder='Password' id="password" />
+                    <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} placeholder='Password' id="password" />
                 </div>
                 <input type="checkbox" name="remember" id="remember" /> &nbsp;Rememeber me ?
                 <button type="submit" className='bg-[#FF9F0D] border-none text-white'>Sign in</button>

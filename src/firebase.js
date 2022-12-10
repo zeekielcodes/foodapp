@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
 import { getFirestore, collection, getDocs, addDoc, doc, setDoc } from 'firebase/firestore/lite';
 // TODO: Replace the following with your app's Firebase project configuration
 
@@ -33,16 +33,18 @@ const usersCollection = collection(db, "users")
 export const createUser = user => {
     createUserWithEmailAndPassword(auth, user.email, user.password)
   .then((userCredential) => {
+    console.log(userCredential);
     const createdUser = userCredential.user;
-    return setDoc(doc(db, "users", createdUser.uid), {
+    setDoc(doc(db, "users", createdUser.uid), {
       Name: user.name
     })
+    return usersCollection
     // usersCollection.doc(user.id).set({
     //     "Name": user.name
     // })
     // addDoc(usersCollection, user);
     // ...
-  })
+  }).catch(error => console.log(error))
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
@@ -50,6 +52,12 @@ export const createUser = user => {
     // ..
   });
    
+}
+
+export const signInUser = user => {
+  signInWithEmailAndPassword(auth, user.email, user.password)
+  .then(userCredential => console.log(userCredential))
+  .catch(error => console.log(error))
 }
 
 // export default getCities;

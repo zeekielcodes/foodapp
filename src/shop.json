@@ -38,7 +38,7 @@
             "ratings": 2
         },
         {
-            "id": 4,
+            "id": 5,
             "name": "Drink",
             "image": "drinks.png",
             "price": 23,
@@ -47,7 +47,7 @@
             "ratings": 2
         },
         {
-            "id": 5,
+            "id": 6,
             "name": "Pizza",
             "image": "pizza.png",
             "price": 43,
@@ -56,7 +56,7 @@
             "ratings": 2
         },
         {
-            "id": 6,
+            "id": 7,
             "name": "Cheese Butter",
             "image": "cheesebutter.png",
             "price": 10,
@@ -65,7 +65,7 @@
             "ratings": 2
         },
         {
-            "id": 7,
+            "id": 8,
             "name": "Sandwiches",
             "image": "sandwich.png",
             "price": 25,
@@ -74,7 +74,7 @@
             "ratings": 2
         },
         {
-            "id": 8,
+            "id": 9,
             "name": "Chicken Chup",
             "image": "chup.png",
             "price": 12,

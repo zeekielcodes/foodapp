@@ -93,3 +93,7 @@
 .foods .each-food h4 span {
     @apply text-[#828282] line-through
 }
+
+.food-details {
+    @apply px-40 py-20
+}
