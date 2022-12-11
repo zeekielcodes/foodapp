@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Banner from '../components/Banner'
 import SingleShopFood from '../components/SingleShopFood'
 import foods from "../shop.json"
@@ -9,6 +9,15 @@ import { RxDoubleArrowLeft, RxDoubleArrowRight } from "react-icons/rx"
 import { MdOutlineDoubleArrow } from "react-icons/md"
 
 function Shop() {
+  const [filter, setFilter] = useState<number>(0)
+
+
+  const filterSlider = (e:React.ChangeEvent<HTMLInputElement>) => {
+    // setFilter(e.target.value)
+    const hold = parseInt(e.currentTarget.value)
+    setFilter(hold)
+  }
+
   return (
     <div>
         <Banner pageName="Our Shop" page="Shop"/>
@@ -52,7 +61,7 @@ function Shop() {
               <Link to="/">Shop Now <BsArrowRightCircle /></Link>
             </div>
             <h3>Filter By Price</h3>
-            <input type="range" name="filter" id="price" className='range' value={80} />
+            <input type="range" name="filter" value={filter} id="price" onChange={filterSlider} className='range' />
           </div>
         </div>
     </div>

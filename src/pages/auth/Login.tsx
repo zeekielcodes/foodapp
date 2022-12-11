@@ -4,7 +4,8 @@ import { Link } from "react-router-dom"
 import { FcGoogle} from "react-icons/fc"
 import { BsApple } from "react-icons/bs"
 import { FiLock, FiMail } from "react-icons/fi"
-import { signInUser } from '../../firebase'
+import { auth } from '../../firebase'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 
 function Login() {
     const [email, setEmail] = useState<string>("")
@@ -13,7 +14,9 @@ function Login() {
     const signIn = (e:React.FormEvent) => {
         e.preventDefault()
         const user = {email, password}
-        signInUser(user)
+        signInWithEmailAndPassword(auth, user.email, user.password)
+        .then(userCredential => console.log(userCredential))
+        .catch(error => console.log(error))
     }
 
   return (

@@ -7,7 +7,7 @@
 }
 
 .shop .store select {
-    @apply px-6 py-2 border rounded mx-4 text-[#0D0D0D] bg-none bg-transparent
+    @apply px-6 py-2 border-2 outline-none rounded mx-2 text-[#0D0D0D] bg-none bg-transparent
 }
 
 .shop .store .pagination {
@@ -59,7 +59,7 @@
 }
 
 .shop .filter .range {
-    @apply w-full accent-[#FF9F0D] bg-white
+    @apply w-full accent-[#FF9F0D] outline-none
 }
 
 .shop .store .foods {
@@ -96,4 +96,24 @@
 
 .food-details {
     @apply px-40 py-20
+}
+
+.food-details .food {
+    @apply flex gap-6 
+}
+
+.food-details .food .details button {
+    @apply bg-[#FF9F0D] text-white px-6 py-2 rounded
+}
+
+.food-details .food .details h3 {
+    @apply text-[#333333] font-BoldHelvetica text-[32px] mb-4
+}
+
+.food-details .food .details h2 {
+    @apply text-[#333333] font-BoldHelvetica text-[48px]
+}
+
+.food-details .food .ratings, .food-details .food .ratings p {
+    @apply flex gap-2
 }

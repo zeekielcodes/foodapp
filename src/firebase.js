@@ -18,7 +18,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+export const auth = getAuth(app);
 const db = getFirestore(app);
 const usersCollection = collection(db, "users")
 
@@ -54,10 +54,8 @@ export const createUser = user => {
    
 }
 
-export const signInUser = user => {
-  signInWithEmailAndPassword(auth, user.email, user.password)
-  .then(userCredential => console.log(userCredential))
-  .catch(error => console.log(error))
-}
+// export const signInUser = user => {
+  
+// }
 
 // export default getCities;
