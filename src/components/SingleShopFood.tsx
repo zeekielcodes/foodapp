@@ -9,12 +9,13 @@ interface Props {
     image:string,
     price:number,
     mainPrice:number | undefined,
+    description: string,
     category: string,
     ratings: number,
     // images: [],
 }
 
-function SingleShopFood({id, name, image, price, mainPrice, category, ratings}:Props) {
+function SingleShopFood({id, name, image, price, mainPrice, description, category, ratings}:Props) {
   return (
     <div className='each-food'>
         <img src={require(`../assets/images/${image}`)} alt="" />

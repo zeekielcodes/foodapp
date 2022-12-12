@@ -102,18 +102,46 @@
     @apply flex gap-6 
 }
 
-.food-details .food .details button {
-    @apply bg-[#FF9F0D] text-white px-6 py-2 rounded
+.food-details .food .details button.back {
+    @apply bg-[#FF9F0D] text-white px-4 py-2 rounded
+}
+
+.food-details .food .details, .food-details .food img {
+    @apply w-1/2
 }
 
 .food-details .food .details h3 {
-    @apply text-[#333333] font-BoldHelvetica text-[32px] mb-4
+    @apply text-[#333333] font-BoldHelvetica text-[32px] my-2
 }
 
 .food-details .food .details h2 {
-    @apply text-[#333333] font-BoldHelvetica text-[48px]
+    @apply text-[#333333] font-BoldHelvetica text-[40px]
+}
+
+.food-details .food .details p.description {
+    @apply mb-4
 }
 
 .food-details .food .ratings, .food-details .food .ratings p {
-    @apply flex gap-2
+    @apply flex gap-2 items-center text-[#A9A9A9] text-[16px] font-Inter
+}
+
+.food-details .food .ratings p {
+    @apply text-[#FF9F0D]
+}
+
+.plusNminus {
+    @apply flex 
+}
+
+.plusNminus button {
+    @apply w-[50px] h-[50px] border text-[20px] font-bold
+}
+
+.food-details .food .cartAddition {
+    @apply flex gap-4 my-4
+}
+
+.food-details .food .details button.cart {
+    @apply px-6 py-2 bg-[#FF9F0D] text-white flex gap-2 items-center rounded
 }
