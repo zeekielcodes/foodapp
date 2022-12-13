@@ -149,3 +149,19 @@
 .cart {
     @apply px-40 py-20
 }
+
+.cart table, .cart table tr {
+    @apply w-full
+}
+
+.cart table tr {
+    @apply mb-4 border py-2
+}
+
+.cart table tr td {
+    @apply w-1/5
+}
+
+.cart table tr td img {
+    @apply h-[100px]
+}

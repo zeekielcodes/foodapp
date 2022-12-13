@@ -9,7 +9,16 @@ function Cart() {
     <div>
         <Banner pageName="Shopping Cart" page="Shopping Cart"/>
         <div className="cart">
-          {state.cart.map(item => <SingleCartItem name={item.name} price={item.price} image={item.image} quantity={item.quantity} />)}
+          <table>
+            <tr>
+              <td>Product</td>
+              <td>Price</td>
+              <td>Quantity</td>
+              <td>Total</td>
+              <td>Remove</td>
+            </tr>
+            {state.cart.map(item => <SingleCartItem name={item.name} price={item.price} image={item.image} quantity={item.quantity} />)}
+          </table>
         </div>
     </div>
   )
