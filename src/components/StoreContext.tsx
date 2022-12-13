@@ -1,38 +1,73 @@
-import React, {useReducer} from 'react'
+import React, { useReducer, useContext } from 'react'
+import { Product } from './model'
 
-interface StateProps {
-    state:{},
-    action:{
-        type:string,
-        dispatch:{}
-    }
+const ShopContext = React.createContext<{ state: State, dispatch: React.Dispatch<Action> } | undefined>(undefined)
+
+interface State {
+  cart: Product[],
+  wishlist: Product[]
 }
 
-const ShopContext = React.createContext({})
+interface Action {
+  type: string,
+  payload: Product
+}
 
-// const initial = {
-//     menu: [],
-//     cart: [],
-//     user: {}
-// }
 
-// const reducer = ( {state, action}:StateProps ) => {
-//     switch(action.type) {
-//         case "AddToCart" : 
-//         return {
-//             ...state,
-//         }
-//     }
+interface ContextProps {
+  children: React.ReactElement
+}
 
-// }
 
-// const [state, dispatch] = useReducer(reducer, initial)
+const initial: { cart: Product[], wishlist: Product[] } = {
+  cart: [],
+  wishlist: []
+}
 
-const StoreContext = (children:React.ReactNode) => {
+
+export function useStateContext() {
+  const context = useContext(ShopContext)
+  if (context === undefined) {
+    throw new Error("An error!")
+  } else {
+    return context
+  }
+}
+
+const reducer = (state: State, action: Action) => {
+  switch (action.type) {
+    case "AddToCart":
+      console.log(state);
+
+      return {
+        ...state,
+        cart: [...state.cart, action.payload]
+      }
+
+    case "AddToWishlist":
+      console.log(state);
+
+      return {
+        ...state,
+        wishlist: [...state.wishlist, action.payload]
+      }
+    default:
+      return {
+        ...state
+      }
+  }
+}
+
+
+const StoreContext = ({ children }: ContextProps) => {
+
+  const [state, dispatch] = useReducer(reducer, initial)
+
+  const sharedState = { state, dispatch }
 
   return (
-    <ShopContext.Provider value={useReducer}>
-        {children}
+    <ShopContext.Provider value={sharedState}>
+      {children}
     </ShopContext.Provider>
   )
 }

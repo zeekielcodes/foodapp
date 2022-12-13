@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 import { FiSearch } from "react-icons/fi"
 import { BsArrowRightCircle } from "react-icons/bs"
 import { RxDoubleArrowLeft, RxDoubleArrowRight } from "react-icons/rx"
-import { MdOutlineDoubleArrow } from "react-icons/md"
+
 
 function Shop() {
   const [filter, setFilter] = useState<number>(0)

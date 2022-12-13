@@ -145,3 +145,7 @@
 .food-details .food .details button.cart {
     @apply px-6 py-2 bg-[#FF9F0D] text-white flex gap-2 items-center rounded
 }
+
+.cart {
+    @apply px-40 py-20
+}
