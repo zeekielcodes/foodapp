@@ -1,11 +1,12 @@
-import React, { useReducer, useContext } from 'react'
+import React, { useReducer, useEffect, useContext } from 'react'
 import { Product } from './model'
 
 const ShopContext = React.createContext<{ state: State, dispatch: React.Dispatch<Action> } | undefined>(undefined)
 
 interface State {
   cart: Product[],
-  wishlist: Product[]
+  wishlist: Product[],
+  totalAmount:number
 }
 
 interface Action {
@@ -19,9 +20,10 @@ interface ContextProps {
 }
 
 
-const initial: { cart: Product[], wishlist: Product[] } = {
+const initial: { cart: Product[], wishlist: Product[], totalAmount:number } = {
   cart: [],
-  wishlist: []
+  wishlist: [],
+  totalAmount:0
 }
 
 
@@ -38,19 +40,48 @@ const reducer = (state: State, action: Action) => {
   switch (action.type) {
     case "AddToCart":
       console.log(state);
-
+      // const prices = 
+      const newCart = [...state.cart, action.payload]
       return {
         ...state,
-        cart: [...state.cart, action.payload]
+        cart: newCart,
+        totalAmount: newCart.map(item => item.price).reduce((acc, price) => acc + price, 0)
       }
 
     case "AddToWishlist":
       console.log(state);
-
       return {
         ...state,
         wishlist: [...state.wishlist, action.payload]
       }
+
+      case "UpdateCart":
+        const update = state.cart.map(item => item.id === action.payload.id ? {...item, quanity:item.quantity++} : item)
+        console.log(update);
+        
+        return {
+          ...state,
+          cart: update,
+          totalAmount: update.map(item => item.price).reduce((acc, price) => acc + price, 0)
+        }
+
+        case "reduceQuantity":
+          const reduce = state.cart.map(item => item.id === action.payload.id ? {...item, quanity:item.quantity--} : item)
+
+          return {
+            ...state,
+            cart:reduce,
+            totalAmount: reduce.map(item => item.price).reduce((acc, price) => acc + price, 0)
+          }
+
+          case "removeFromCart" :
+            const remove = state.cart.filter(item => item.id !== action.payload.id)
+            return {
+              ...state,
+              cart: remove,
+              totalAmount: remove.map(item => item.price).reduce((acc, price) => acc + price, 0)
+            }
+
     default:
       return {
         ...state
@@ -60,8 +91,16 @@ const reducer = (state: State, action: Action) => {
 
 
 const StoreContext = ({ children }: ContextProps) => {
-
   const [state, dispatch] = useReducer(reducer, initial)
+
+  // useEffect(() => {
+  //   const prices = state.cart.map(item => item.price * item.quantity)
+  //   console.log(prices);
+    
+  //   state.totalAmount = prices.reduce((acc, price) => acc + price, 0)
+  // }, [state])
+
+
 
   const sharedState = { state, dispatch }
 

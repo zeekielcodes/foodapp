@@ -17,23 +17,34 @@ interface Props {
 }
 
 function SingleShopFood({id, name, image, price, mainPrice, description, category, ratings}:Props) {
- const {dispatch} = useStateContext()
+ const {state, dispatch} = useStateContext()
   const addToCart = () => {
     const item = {
+      id,
       name,
       price,
       image,
-      quantity: 1
+      quantity: 1,
+      ratings
     }
+    const isInCart = state.cart.find(item => item.id === id)
+    console.log(isInCart);
+    if(isInCart) {
+      dispatch({type:"UpdateCart", payload:item})
+    } else {
+    
    dispatch({type:"AddToCart", payload: item})
+    }
   }
 
   const addToWishlist = () => {
     const item = {
+      id,
       name,
       price,
       image,
-      quantity: 1
+      quantity: 1,
+      ratings
     }
     dispatch({type:"AddToWishlist", payload: item})
   }
@@ -41,16 +52,16 @@ function SingleShopFood({id, name, image, price, mainPrice, description, categor
 
   return (
     <div className='each-food'>
+      <div className="thumbnail">
         <img src={require(`../assets/images/${image}`)} alt="" />
-        <h3>{name}</h3>
-        <h4>${price.toFixed(2)} <span>{mainPrice ? "$"+mainPrice.toFixed(2) : null}</span></h4>
-        <Link to={`/shop/${id}`}>
           <div className="buttons">
             <button><TbRepeat /></button>
             <button onClick={addToCart}><BiShoppingBag /></button>
             <button onClick={addToWishlist}><BiHeart /></button>
         </div>
-        </Link>
+      </div>
+        <Link to={`/shop/${id}`}><h3>{name}</h3></Link>
+        <h4>${price.toFixed(2)} <span>{mainPrice ? "$"+mainPrice.toFixed(2) : null}</span></h4> 
     </div>
   )
 }

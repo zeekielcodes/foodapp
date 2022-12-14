@@ -67,10 +67,14 @@
 }
 
 .foods .each-food {
-    @apply w-[31%] relative
+    @apply w-[31%] 
 }
 
-.foods .each-food .buttons {
+.foods .each-food .thumbnail {
+    @apply relative
+}
+
+.foods .each-food .thumbnail .buttons {
     @apply absolute top-0 left-0 right-0 bottom-0 hidden
 }
 
@@ -151,17 +155,54 @@
 }
 
 .cart table, .cart table tr {
-    @apply w-full
+    @apply w-full font-bold
 }
 
 .cart table tr {
-    @apply mb-4 border py-2
+    @apply mb-4 border
 }
 
 .cart table tr td {
-    @apply w-1/5
+    @apply w-1/5 p-4 text-center
 }
 
 .cart table tr td img {
-    @apply h-[100px]
+    @apply h-[120px] w-full
+}
+
+.cart table tr td button {
+    @apply shadow px-4 py-2
+}
+
+.cart .couponNtotal {
+    @apply flex gap-4 mt-12
+}
+
+.cart .couponNtotal section {
+    @apply w-1/2
+}
+
+.cart .couponNtotal section h5 {
+    @apply text-[24px] font-BoldHelvetica mb-4
+}
+
+.cart .couponNtotal section div.addCoupon {
+    @apply p-4 border rounded
+}
+
+
+.cart .couponNtotal section div p {
+    @apply text-[#828282] text-[18px] mb-4
+}
+
+.cart .couponNtotal section div form {
+    @apply w-full flex h-[50px] rounded overflow-hidden
+}
+
+.cart .couponNtotal section div form input {
+    @apply w-full bg-none bg-transparent border h-full pl-2 outline-none
+}
+
+.cart .couponNtotal section div form button {
+    @apply bg-[#FF9F0D] text-white px-4 
 }
