@@ -45,7 +45,7 @@ const reducer = (state: State, action: Action) => {
       return {
         ...state,
         cart: newCart,
-        totalAmount: newCart.map(item => item.price).reduce((acc, price) => acc + price, 0)
+        totalAmount: newCart.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
       }
 
     case "AddToWishlist":
@@ -56,22 +56,22 @@ const reducer = (state: State, action: Action) => {
       }
 
       case "UpdateCart":
-        const update = state.cart.map(item => item.id === action.payload.id ? {...item, quanity:item.quantity++} : item)
+        const update = state.cart.map(item => item.id === action.payload.id ? {...item, quantity:item.quantity++} : item)
         console.log(update);
         
         return {
           ...state,
           cart: update,
-          totalAmount: update.map(item => item.price).reduce((acc, price) => acc + price, 0)
+          totalAmount: update.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
         }
 
         case "reduceQuantity":
-          const reduce = state.cart.map(item => item.id === action.payload.id ? {...item, quanity:item.quantity--} : item)
+          const reduce = state.cart.map(item => item.id === action.payload.id ? {...item, quantity:item.quantity--} : item)
 
           return {
             ...state,
             cart:reduce,
-            totalAmount: reduce.map(item => item.price).reduce((acc, price) => acc + price, 0)
+            totalAmount: reduce.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
           }
 
           case "removeFromCart" :
@@ -79,7 +79,7 @@ const reducer = (state: State, action: Action) => {
             return {
               ...state,
               cart: remove,
-              totalAmount: remove.map(item => item.price).reduce((acc, price) => acc + price, 0)
+              totalAmount: remove.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
             }
 
     default:
