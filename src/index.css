@@ -53,11 +53,11 @@ nav .icons {
 }
 
 .header {
-  @apply flex flex-col justify-center items-center bg-banner h-[250px] bg-bottom bg-cover
+  @apply flex flex-col justify-center items-center bg-banner h-[200px] lg:h-[250px] bg-bottom bg-cover
 }
 
 .header h1 {
-  @apply text-[48px] font-bold text-white
+  @apply text-[38px] lg:text-[48px] font-bold text-white
 }
 
 .header p {
@@ -69,11 +69,11 @@ nav .icons {
 }
 
 footer {
-  @apply bg-[#0D0D0D] text-white px-40 py-8
+  @apply bg-[#0D0D0D] text-white px-4 md:px-12 lg:py-8
 }
 
 footer .newsletter {
-  @apply flex justify-between items-center py-8 border-b-2 border-[#FF9F0D]
+  @apply flex flex-col lg:flex-row gap-4 justify-between items-center py-8 border-b-2 border-[#FF9F0D]
 }
 
 footer .cta h4 {
@@ -97,11 +97,11 @@ footer .newsletter form input {
 }
 
 footer .newsletter form button {
-  @apply h-full bg-white text-[#FF9F0D] px-8
+  @apply h-full bg-white text-[#FF9F0D] px-4 text-sm lg:text-base lg:px-8
 }
 
 footer .footer {
-  @apply flex justify-between py-8
+  @apply flex flex-col lg:flex-row gap-4 justify-between py-8
 }
 
 footer .footer h5 {
@@ -113,7 +113,7 @@ footer .footer h5 {
 }
 
 footer .footer div {
-  @apply w-1/4
+  @apply w-full lg:w-1/4
 }
 
 .footer .company p.about {
@@ -121,7 +121,7 @@ footer .footer div {
 }
 
 .acknowledgement {
-  @apply flex justify-between items-center bg-[#4F4F4F] text-white py-6 px-40
+  @apply flex flex-col-reverse gap-4 lg:flex-row justify-between items-center bg-[#4F4F4F] text-white px-4 md:px-12 py-4 lg:py-6
 }
 
 .acknowledgement .socials {
@@ -129,7 +129,7 @@ footer .footer div {
 }
 
 .acknowledgement p {
-  @apply text-[16px] font-Inter
+  @apply text-[16px] text-center font-Inter
 }
 
 .acknowledgement .socials a {
@@ -157,19 +157,19 @@ section.time div p {
 }
 
 .errorpage {
-  @apply px-8 py-16  flex flex-col justify-center items-center
+  @apply px-4 md:px-12 py-8 lg:py-16 text-center flex flex-col justify-center items-center
 }
 
 .errorpage h1 {
-  @apply text-[96px] text-[#FF9F0D] font-BoldHelvetica
+  @apply text-[60px] lg:text-[96px] text-[#FF9F0D] font-BoldHelvetica
 }
 
 .errorpage h2 {
-  @apply text-[32px] font-BoldHelvetica
+  @apply text-[28px] lg:text-[32px] font-BoldHelvetica
 }
 
 .errorpage p {
-  @apply text-[18px] font-Inter my-4 w-2/5 text-center text-[#4F4F4F]
+  @apply text-[18px] font-Inter my-4 w-11/12 md:w-4/5 lg:w-2/5 text-center text-[#4F4F4F]
 }
 
 .errorpage a {
@@ -177,7 +177,7 @@ section.time div p {
 }
 
 .menu {
-  @apply px-40 py-20
+  @apply px-4 md:px-12 py-4 lg:py-20
 }
 
 .menu h2 {
@@ -185,15 +185,15 @@ section.time div p {
 }
 
 .each-menu {
-   @apply flex gap-12 justify-between items-center
+   @apply flex flex-col-reverse lg:flex-row gap-12 justify-between items-center
 }
 
 .each-menu img {
-  @apply w-2/5 h-full
+  @apply w-full lg:w-2/5 h-full
 }
 
 .each-menu .menu-list {
-  @apply w-3/5
+  @apply w-full lg:w-3/5
 }
 
 .nameNprice {
@@ -229,11 +229,15 @@ section.time div p {
 }
 
 .partners h6 {
-  @apply text-[32px] mb-4 font-BoldHelvetica
+  @apply text-[32px] mb-4 text-center font-BoldHelvetica
 }
 
 .partners .brands {
-  @apply flex gap-6 mt-4
+  @apply flex flex-wrap justify-center gap-4 lg:gap-6 mt-4
+}
+
+.partners .brands img {
+  @apply w-[40%] lg:w-auto
 }
 
 .mid-menu {
@@ -241,9 +245,13 @@ section.time div p {
 }
 
 .mid-menu .overlay {
-  @apply flex justify-between font-BoldHelvetica px-40 text-center text-white items-center absolute top-0 left-0 bottom-0 right-0 bg-[rgba(0,0,0,0.7)]
+  @apply flex justify-between font-BoldHelvetica px-2 md:px-12 py-4 lg:px-40 text-center text-white items-center absolute top-0 left-0 bottom-0 right-0 bg-[rgba(0,0,0,0.7)]
+}
+
+.mid-menu .overlay div {
+  @apply w-1/5 lg:w-auto text-center
 }
 
 .mid-menu .overlay div h5 {
-  @apply my-2 text-[40px]
+  @apply my-2 text-[30px] lg:text-[40px]
 }

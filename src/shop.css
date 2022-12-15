@@ -1,9 +1,9 @@
 .shop {
-    @apply px-40 py-20 flex gap-4
+    @apply px-4 md:px-12 lg:py-20 flex flex-col-reverse lg:flex-row gap-4
 }
 
 .shop .store {
-    @apply w-3/4 shadow p-4
+    @apply w-full lg:w-3/4 shadow p-4
 }
 
 .shop .store select {
@@ -19,7 +19,7 @@
 }
 
 .shop .filter {
-    @apply w-1/4 shadow p-4
+    @apply w-full lg:w-1/4 shadow p-4
 }
 
 .shop .filter .searchbox {
@@ -67,7 +67,7 @@
 }
 
 .foods .each-food {
-    @apply w-[31%] 
+    @apply w-[47%] lg:w-[31%] 
 }
 
 .foods .each-food .thumbnail {
@@ -151,11 +151,11 @@
 }
 
 .cart {
-    @apply px-40 py-20
+    @apply px-4 md:px-12 lg:px-40 py-4 py-20 overflow-scroll
 }
 
 .cart table, .cart table tr {
-    @apply w-full font-bold
+    @apply w-[150%] md:w-full font-bold
 }
 
 .cart table tr {
@@ -163,7 +163,7 @@
 }
 
 .cart table tr td {
-    @apply w-1/5 p-4 text-center
+    @apply w-1/2 md:w-1/5 p-4 text-center
 }
 
 .cart table tr td img {
@@ -175,11 +175,11 @@
 }
 
 .cart .couponNtotal {
-    @apply flex gap-4 mt-12
+    @apply flex flex-col md:flex-row gap-4 mt-12
 }
 
 .cart .couponNtotal section {
-    @apply w-1/2
+    @apply w-full md:w-1/2
 }
 
 .cart .couponNtotal section h5 {
@@ -208,7 +208,7 @@
 }
 
 .wishlist {
-    @apply px-40 py-20
+    @apply px-4 md:px-12 lg:px-40 py-4 lg:py-20
 }
 
 .wishlist-item {
@@ -236,7 +236,7 @@
 }
 
 .empty img {
-    @apply h-[60vh]
+    @apply h-[50vh] lg:h-[60vh]
 }
 
 .empty h3 {

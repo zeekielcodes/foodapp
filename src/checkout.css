@@ -1,9 +1,9 @@
 .checkout {
-    @apply px-40 py-20 flex gap-4
+    @apply px-4 md:px-12 py-4 lg:py-20 flex flex-col lg:flex-row gap-4
 }
 
 .checkout section.form {
-    @apply w-2/3 
+    @apply w-full lg:w-2/3 
 }
 
 .checkout section.form h2 {
@@ -15,11 +15,11 @@
 }
 
 .checkout section.products {
-    @apply w-1/3 border p-4
+    @apply w-full lg:w-1/3 border p-4
 }
 
 .checkout section.form .inputarea {
-    @apply w-[48%] py-2
+    @apply w-full lg:w-[48%] py-2
 }
 
 .checkout section.form .inputarea input {
@@ -27,7 +27,7 @@
 }
 
 .checkout section.form form button {
-    @apply w-[48%] h-[50px] rounded
+    @apply w-[46%] lg:w-[48%] h-[50px] rounded
 }
 
 .check-item {

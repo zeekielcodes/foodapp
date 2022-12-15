@@ -1,9 +1,9 @@
 .auth {
-    @apply py-40 flex justify-center items-center
+    @apply py-20 lg:py-40 flex justify-center items-center
 }
 
 .auth form {
-    @apply p-8 shadow-form w-2/5
+    @apply p-8 shadow-form w-11/12 md:w-4/5 lg:w-2/5
 }
 
 .auth form h2 {

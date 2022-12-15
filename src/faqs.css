@@ -1,13 +1,13 @@
 .faqs {
-    @apply px-40 py-20 flex flex-col justify-center items-center
+    @apply px-4 md:px-12 lg:px-40 py-8 lg:py-20 flex flex-col justify-center items-center
 }
 
 .faqs h1 {
-    @apply text-[48px] font-BoldHelvetica
+    @apply text-[32px] text-center lg:text-[48px] font-BoldHelvetica
 }
 
 .faqs .questions-container {
-    @apply grid grid-cols-2 gap-8 mt-8 w-full
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8 w-full
 }
 
 .faqs .questions-container .singlefaq {
@@ -15,7 +15,7 @@
 }
 
 .questions-container .singlefaq .top {
-    @apply flex justify-between items-center mb-4
+    @apply flex justify-between items-center
 }
 
 .questions-container .singlefaq .top h3 {
@@ -23,5 +23,5 @@
 }
 
 .questions-container p {
-    @apply text-[16px] font-Inter text-[#4F4F4F]
+    @apply text-[16px] font-Inter mt-4 text-[#4F4F4F]
 }
