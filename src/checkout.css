@@ -1,3 +1,47 @@
 .checkout {
-    @apply px-40 py-20
+    @apply px-40 py-20 flex gap-4
+}
+
+.checkout section.form {
+    @apply w-2/3 
+}
+
+.checkout section.form h2 {
+    @apply text-[24px] font-BoldHelvetica mb-4
+}
+
+.checkout section.form form {
+    @apply flex flex-wrap gap-4
+}
+
+.checkout section.products {
+    @apply w-1/3 border p-4
+}
+
+.checkout section.form .inputarea {
+    @apply w-[48%] py-2
+}
+
+.checkout section.form .inputarea input {
+    @apply w-full h-[40px] border
+}
+
+.checkout section.form form button {
+    @apply w-[48%] h-[50px] rounded
+}
+
+.check-item {
+    @apply h-[100px] mb-4 flex gap-4 items-center
+}
+
+.check-item img {
+    @apply h-full
+}
+
+.check-item h4 {
+    @apply font-BoldHelvetica
+}
+
+.check-item h5 {
+    @apply font-Helvetica text-[#4F4F4F]
 }

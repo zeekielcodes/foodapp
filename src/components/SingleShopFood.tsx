@@ -46,7 +46,11 @@ function SingleShopFood({id, name, image, price, mainPrice, description, categor
       quantity: 1,
       ratings
     }
-    dispatch({type:"AddToWishlist", payload: item})
+    const there = state.wishlist.find(item => item.id === id)
+    if(!there) {
+      dispatch({type:"AddToWishlist", payload: item})
+    }
+    
   }
 
 
