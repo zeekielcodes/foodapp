@@ -40,19 +40,23 @@ const reducer = (state: State, action: Action) => {
   switch (action.type) {
     case "AddToCart":
       console.log(state);
-      // const prices = 
       const newCart = [...state.cart, action.payload]
       return {
         ...state,
         cart: newCart,
+        wishlist: state.wishlist.filter(item => item.id !== action.payload.id),
         totalAmount: newCart.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
       }
 
     case "AddToWishlist":
       console.log(state);
+      const removeCart = state.cart.filter(item => item.id !== action.payload.id)
       return {
         ...state,
-        wishlist: [...state.wishlist, action.payload]
+        cart: removeCart,
+        wishlist: [...state.wishlist, action.payload],
+        totalAmount: removeCart.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
+        
       }
 
       case "UpdateCart":
@@ -81,6 +85,12 @@ const reducer = (state: State, action: Action) => {
               cart: remove,
               totalAmount: remove.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
             }
+
+            case "removeFromWishlist":
+              return {
+                ...state,
+                wishlist: state.wishlist.filter(item => item.id !== action.payload.id)
+              }
 
     default:
       return {

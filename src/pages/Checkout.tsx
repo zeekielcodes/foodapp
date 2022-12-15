@@ -5,6 +5,9 @@ function Checkout() {
   return (
     <div>
         <Banner pageName="Checkout Page" page="Checkout"/>
+        <div className="checkout">
+          
+        </div>
     </div>
   )
 }

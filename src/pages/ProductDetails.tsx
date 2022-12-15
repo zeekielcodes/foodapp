@@ -20,10 +20,10 @@ function ProductDetails() {
     <div>
       {foods.products.map(food => food.id === parseInt(id) ? <> <Banner pageName="Food Details" page={food.name}/> 
       <div className="food-details">
+      <button className='back' onClick={(e) => nav(-1)}>Go Back</button>
         <div className="food">
           <img src={require(`../assets/images/${food.image}`)} alt="" />
           <div className="details">
-            <button className='back' onClick={(e) => nav(-1)}>Go Back</button>
             <h2>{food.name}</h2>
             <p className='description'>{food.description}</p>
             <hr />

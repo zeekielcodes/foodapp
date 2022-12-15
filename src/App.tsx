@@ -18,6 +18,7 @@ import Chefs from './pages/Chefs'
 import FAQs from './pages/FAQs'
 import ProductDetails from './pages/ProductDetails'
 import StoreContext from "./components/StoreContext"
+import Wishlist from './pages/Wishlist'
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/chefs" element={<Chefs />} />
           <Route path="/faqs" element={<FAQs />} />
+          <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/*" element={<Error />} />
         </Routes>
       <Footer />

@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import logo from "../assets/Foodtuck.png"
 
-import { BiUser, BiShoppingBag } from "react-icons/bi"
+import { BiUser, BiShoppingBag, BiHeart } from "react-icons/bi"
 import { FiSearch } from "react-icons/fi"
 
 const Nav = () => {
@@ -20,7 +20,8 @@ const Nav = () => {
         </ul>
         <div className="icons">
             <button><FiSearch /></button>
-            <Link to="/login"><BiUser /></Link> 
+            <Link to="/login"><BiUser /></Link>
+            <Link to="/wishlist"><BiHeart /></Link>
             <Link to="/cart"><BiShoppingBag /></Link>
         </div>
     </nav>

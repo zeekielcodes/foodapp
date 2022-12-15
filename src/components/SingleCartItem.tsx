@@ -1,46 +1,35 @@
 import React from 'react'
 import { AiFillStar } from 'react-icons/ai'
-import { BiTrash } from 'react-icons/bi'
+import { BiHeart, BiTrash } from 'react-icons/bi'
 import { Product } from './model'
 import { useStateContext } from './StoreContext'
 
 function SingleCartItem({ id, name, price, image, quantity, ratings }: Product) {
     const {state, dispatch} = useStateContext()
 
+    const item = {
+        id,
+        name,
+        price,
+        image,
+        quantity: 1,
+        ratings
+      }
+
     const reduceQuantity = () => {
-        const item = {
-            id,
-            name,
-            price,
-            image,
-            quantity: 1,
-            ratings
-          }
           dispatch({type:"reduceQuantity", payload:item})
     }
 
     const increaseQuantity = () => {
-        const item = {
-            id,
-            name,
-            price,
-            image,
-            quantity: 1,
-            ratings
-          }
           dispatch({type:"UpdateCart", payload:item})
     }
 
     const removeFromCart = () => {
-        const item = {
-            id,
-            name,
-            price,
-            image,
-            quantity: 1,
-            ratings
-          }
           dispatch({type:"removeFromCart", payload:item})
+    }
+
+    const addToWishlist = () => {
+        dispatch({type:"AddToWishlist", payload:item})
     }
 
     return (
@@ -61,6 +50,7 @@ function SingleCartItem({ id, name, price, image, quantity, ratings }: Product) 
             </td>
             <td>${(price * quantity).toFixed(2)}</td>
             <td>
+                <button className='text-[#FF9F0D]' onClick={addToWishlist}><BiHeart /></button><br /><br />
                 <button className='text-red-600' onClick={removeFromCart}><BiTrash /></button>
             </td>
         </tr>

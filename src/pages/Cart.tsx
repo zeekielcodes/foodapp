@@ -1,10 +1,12 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import Banner from '../components/Banner'
 import SingleCartItem from '../components/SingleCartItem'
 import { useStateContext } from '../components/StoreContext'
 
 function Cart() {
   const {state} = useStateContext()
+  const nav = useNavigate()
   return (
     <div>
         <Banner pageName="Shopping Cart" page="Shopping Cart"/>
@@ -49,6 +51,7 @@ function Cart() {
                   <h6>${(state.totalAmount).toFixed(2)}</h6>
                 </div>
               </div>
+              <button onClick={() => nav("/checkout")} className='w-full mt-2 bg-[#FF9F0D] text-[18px] py-2 text-white rounded font-Inter'>Proceed to Checkout</button>
             </section>
            </div>
         </div>

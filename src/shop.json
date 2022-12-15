@@ -6,8 +6,8 @@
             "image": "fresh-lime.png",
             "price": 38,
             "mainPrice": 45,
-"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
-            "category": "",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
+            "category": "Lime",
             "ratings": 2
         
         },
@@ -17,8 +17,8 @@
             "image": "muffin.png",
             "price": 28,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
-            "category": "",
-            "ratings": 2
+            "category": "Chocolate",
+            "ratings": 1
         },
         {
             "id": 3,
@@ -26,9 +26,9 @@
             "image": "burger.png",
             "price": 21,
             "mainPrice": 45,
-"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
             "category": "Burger",
-            "ratings": 2
+            "ratings": 3
         },
         {
             "id": 4,
@@ -37,7 +37,7 @@
             "price": 45,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
             "category": "Burger",
-            "ratings": 2
+            "ratings": 3
         },
         {
             "id": 5,
@@ -46,8 +46,8 @@
             "price": 23,
             "mainPrice": 45,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
-            "category": "drink",
-            "ratings": 2
+            "category": "Drink",
+            "ratings": 5
         },
         {
             "id": 6,
@@ -55,8 +55,8 @@
             "image": "pizza.png",
             "price": 43,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
-            "category": "pizza",
-            "ratings": 2
+            "category": "Pizza",
+            "ratings": 5
         },
         {
             "id": 7,
@@ -64,8 +64,8 @@
             "image": "cheesebutter.png",
             "price": 10,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
-            "category": "",
-            "ratings": 2
+            "category": "Cheese",
+            "ratings": 4
         },
         {
             "id": 8,
@@ -73,8 +73,8 @@
             "image": "sandwich.png",
             "price": 25,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
-            "category": "sandwiches",
-            "ratings": 2
+            "category": "Sandwiches",
+            "ratings": 3
         },
         {
             "id": 9,
@@ -82,7 +82,7 @@
             "image": "chup.png",
             "price": 12,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
-            "category": "chicken chup",
+            "category": "Chicken Chup",
             "ratings": 2
         }
     ]

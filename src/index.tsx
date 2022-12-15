@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import './auth.css';
 import './faqs.css';
-import "./shop.css"
+import "./shop.css";
+import "./checkout.css";
 import App from './App';
 
 const root = ReactDOM.createRoot(

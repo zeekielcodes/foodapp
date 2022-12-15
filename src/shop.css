@@ -106,8 +106,8 @@
     @apply flex gap-6 
 }
 
-.food-details .food .details button.back {
-    @apply bg-[#FF9F0D] text-white px-4 py-2 rounded
+.food-details button.back {
+    @apply bg-[#FF9F0D] text-white px-4 py-2 mb-4 rounded
 }
 
 .food-details .food .details, .food-details .food img {
@@ -205,4 +205,28 @@
 
 .cart .couponNtotal section div form button {
     @apply bg-[#FF9F0D] text-white px-4 
+}
+
+.wishlist {
+    @apply px-40 py-20
+}
+
+.wishlist-item {
+    @apply h-[200px] mb-4 flex gap-4 items-center
+}
+
+.wishlist-item img {
+    @apply h-full
+}
+
+.wishlist-item .item-detail h3, .wishlist-item .item-detail h4 {
+    @apply font-BoldHelvetica
+}
+
+.wishlist-item .item-detail h3 {
+    @apply text-[18px] mb-2
+}
+
+.wishlist-item .item-detail button {
+    @apply p-2 rounded shadow flex text-[12px] items-center gap-2 mt-2
 }
