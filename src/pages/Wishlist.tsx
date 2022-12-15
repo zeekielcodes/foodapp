@@ -2,6 +2,7 @@ import React from 'react'
 import { AiFillStar } from 'react-icons/ai'
 import { BiShoppingBag, BiTrash } from 'react-icons/bi'
 import Banner from '../components/Banner'
+import Empty from '../components/Empty'
 import { useStateContext } from '../components/StoreContext'
 
 function Wishlist() {
@@ -11,6 +12,7 @@ function Wishlist() {
     return (
         <div>
             <Banner pageName="My Wishlist" page="Wishlist" />
+            {state.wishlist.length > 0 ?
             <div className="wishlist">
                 {state.wishlist.map(item =>
                     <div className="wishlist-item">
@@ -29,6 +31,8 @@ function Wishlist() {
                     </div>
                 )}
             </div>
+                :
+                <Empty image="wishlist.jpg" text="Nothing on Wishlist" paragraph="Proceed to store and start saving" /> }
         </div>
     )
 }

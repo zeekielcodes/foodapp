@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Banner from '../components/Banner'
+import Empty from '../components/Empty'
 import SingleCartItem from '../components/SingleCartItem'
 import { useStateContext } from '../components/StoreContext'
 
@@ -10,7 +11,8 @@ function Cart() {
   return (
     <div>
         <Banner pageName="Shopping Cart" page="Shopping Cart"/>
-        <div className="cart">
+        {state.cart.length > 0 ?
+        <div className="cart" >
           <table>
             <tbody>
               <tr>
@@ -55,6 +57,8 @@ function Cart() {
             </section>
            </div>
         </div>
+    :
+    <Empty image="cart.jpg" text="Your cart is empty" paragraph="Proceed to store and start shopping" /> }
     </div>
   )
 }

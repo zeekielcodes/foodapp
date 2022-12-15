@@ -230,3 +230,23 @@
 .wishlist-item .item-detail button {
     @apply p-2 rounded shadow flex text-[12px] items-center gap-2 mt-2
 }
+
+.empty {
+    @apply p-8 flex flex-col gap-2 justify-center items-center
+}
+
+.empty img {
+    @apply h-[60vh]
+}
+
+.empty h3 {
+    @apply font-BoldHelvetica text-[24px] text-[#FF9F0D]
+}
+
+.empty p {
+    @apply text-[#4F4F4F] font-Inter
+}
+
+.empty a {
+    @apply px-6 py-2 rounded bg-[#FF9F0D] text-white
+}
