@@ -37,7 +37,7 @@ function ProductDetails() {
               <div className="plusNminus">
             <button onClick={()=> setQuantity(quantity-1)} disabled={quantity<=1}>-</button><button>{quantity}</button><button onClick={()=> setQuantity(quantity+1)}>+</button>
            </div>
-           <button className='cart'><BiShoppingBag /> Add to Cart</button>
+           <button className='addcart'><BiShoppingBag /> Add to Cart</button>
             </div>
            <hr className='mt-6 mb-4' />
            <button className='flex items-center text-[16px] gap-2'><BiHeart /> Add to Wishlist</button>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Footer from './components/Footer'
 import Nav from './components/Nav'
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
@@ -17,13 +17,40 @@ import SignUp from './pages/auth/SignUp'
 import Chefs from './pages/Chefs'
 import FAQs from './pages/FAQs'
 import ProductDetails from './pages/ProductDetails'
-import StoreContext from "./components/StoreContext"
+import { useStateContext } from "./components/StoreContext"
 import Wishlist from './pages/Wishlist'
+import { Product } from './components/model'
 
 function App() {
+ const {state, dispatch} = useStateContext()
+  
+  useEffect(() => {
+    const savedCart = localStorage.getItem("cart")
+    if(savedCart) {
+      const parsed:Product[] = JSON.parse(savedCart)
+      parsed.forEach(item => 
+        state.cart.find(food => food.id === item.id) ? dispatch({type:"UpdateCart", payload:item}) :
+        dispatch({type:"AddToCart", payload: item}))
+    }    
+
+    const savedWishlist = localStorage.getItem("wishlist")
+    if(savedWishlist) {
+      const wishlist:Product[] = JSON.parse(savedWishlist)
+      wishlist.forEach(item => 
+        state.wishlist.find(food => food.id === item.id) ? "" :
+        dispatch({type:"AddToWishlist", payload: item}))
+    }    
+  },[])
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(state.cart))  
+    localStorage.setItem("wishlist", JSON.stringify(state.wishlist)) 
+    
+  }, [state])
+
   return (
     <main>
-      <StoreContext>
+   
       <Router>
       <Nav />
         <Routes>
@@ -46,7 +73,6 @@ function App() {
         </Routes>
       <Footer />
       </Router>
-      </StoreContext>
     </main>
   )
 }

@@ -22,7 +22,7 @@ function Cart() {
               <td>Total</td>
               <td>Remove</td>
             </tr>
-            {state.cart.map(item => <SingleCartItem id={item.id} name={item.name} price={item.price} image={item.image} quantity={item.quantity} ratings={item.ratings} />)}
+            {state.cart.map(item => <SingleCartItem key={item.id} id={item.id} name={item.name} price={item.price} image={item.image} quantity={item.quantity} ratings={item.ratings} />)}
             </tbody>
            </table>
            <div className="couponNtotal">

@@ -91,7 +91,6 @@ const reducer = (state: State, action: Action) => {
                 ...state,
                 wishlist: state.wishlist.filter(item => item.id !== action.payload.id)
               }
-
     default:
       return {
         ...state
@@ -103,12 +102,8 @@ const reducer = (state: State, action: Action) => {
 const StoreContext = ({ children }: ContextProps) => {
   const [state, dispatch] = useReducer(reducer, initial)
 
-  // useEffect(() => {
-  //   const prices = state.cart.map(item => item.price * item.quantity)
-  //   console.log(prices);
-    
-  //   state.totalAmount = prices.reduce((acc, price) => acc + price, 0)
-  // }, [state])
+
+
 
 
 

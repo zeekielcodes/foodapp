@@ -1,5 +1,5 @@
 .shop {
-    @apply px-4 md:px-12 lg:py-20 flex flex-col-reverse lg:flex-row gap-4
+    @apply p-4 md:px-12 lg:py-20 flex flex-col-reverse lg:flex-row gap-4
 }
 
 .shop .store {
@@ -99,11 +99,11 @@
 }
 
 .food-details {
-    @apply px-40 py-20
+    @apply p-4 lg:px-40 lg:py-20
 }
 
 .food-details .food {
-    @apply flex gap-6 
+    @apply flex flex-col lg:flex-row gap-6 
 }
 
 .food-details button.back {
@@ -111,7 +111,7 @@
 }
 
 .food-details .food .details, .food-details .food img {
-    @apply w-1/2
+    @apply w-full lg:w-1/2
 }
 
 .food-details .food .details h3 {
@@ -146,7 +146,7 @@
     @apply flex gap-4 my-4
 }
 
-.food-details .food .details button.cart {
+.food-details .food .details button.addcart {
     @apply px-6 py-2 bg-[#FF9F0D] text-white flex gap-2 items-center rounded
 }
 
@@ -154,8 +154,8 @@
     @apply px-4 md:px-12 lg:px-40 py-4 py-20 overflow-scroll
 }
 
-.cart table, .cart table tr {
-    @apply w-[150%] md:w-full font-bold
+.cart table, .cart table tbody {
+    @apply w-[200%] md:w-full font-bold
 }
 
 .cart table tr {
@@ -163,7 +163,7 @@
 }
 
 .cart table tr td {
-    @apply w-1/2 md:w-1/5 p-4 text-center
+    @apply w-[300px] md:w-1/5 p-4 text-center
 }
 
 .cart table tr td img {
@@ -212,7 +212,7 @@
 }
 
 .wishlist-item {
-    @apply h-[200px] mb-4 flex gap-4 items-center
+    @apply h-[150px] lg:h-[200px] mb-4 flex gap-4 items-center
 }
 
 .wishlist-item img {
@@ -224,11 +224,11 @@
 }
 
 .wishlist-item .item-detail h3 {
-    @apply text-[18px] mb-2
+    @apply text-[16px] lg:text-[18px] lg:mb-2
 }
 
 .wishlist-item .item-detail button {
-    @apply p-2 rounded shadow flex text-[12px] items-center gap-2 mt-2
+    @apply p-2 rounded shadow flex text-[12px] items-center gap-2 lg:mt-2
 }
 
 .empty {

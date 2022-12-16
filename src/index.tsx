@@ -6,13 +6,16 @@ import './faqs.css';
 import "./shop.css";
 import "./checkout.css";
 import App from './App';
+import StoreContext from './components/StoreContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+       <StoreContext>
+         <App />
+       </StoreContext>
   </React.StrictMode>
 );
 
