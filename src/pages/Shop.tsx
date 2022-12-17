@@ -43,16 +43,9 @@ function Shop() {
     setFilter(hold)
     setStore(oStore)
     const fullStorePrices = store.map(food => food.price)
-    console.log(fullStorePrices);
-    
     const maxPrice = Math.max(...fullStorePrices)
-    console.log(maxPrice);
-    
     const percent = (hold / 100) * maxPrice
-    console.log(percent);
     const filtered = store.filter(item => item.price >= percent)
-    console.log("Filtered", filtered);
-    
     setStore(filtered)
     
     
