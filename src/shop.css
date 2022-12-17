@@ -250,3 +250,11 @@
 .empty a {
     @apply px-6 py-2 rounded bg-[#FF9F0D] text-white
 }
+
+.modal {
+    @apply bg-green-500 p-4 text-white absolute border-b-8 border-[#FF9F0D] right-0 top-20 rounded-l min-w-[500px]
+}
+
+.modal h4 {
+    @apply font-bold text-xl mb-2
+}

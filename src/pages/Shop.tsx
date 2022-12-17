@@ -6,11 +6,38 @@ import { Link } from "react-router-dom"
 import { FiSearch } from "react-icons/fi"
 import { BsArrowRightCircle } from "react-icons/bs"
 import { RxDoubleArrowLeft, RxDoubleArrowRight } from "react-icons/rx"
+import { Product } from '../components/model'
+
+
+interface Props {
+  id:number,
+  name: string,
+  image:string,
+  price:number,
+  mainPrice?:number,
+  description: string,
+  category: string,
+  ratings: number,
+  // images: [],
+}
 
 
 function Shop() {
   const [filter, setFilter] = useState<number>(0)
+  const [query, setQuery] = useState<string>("")
+  const [store, setStore] = useState<Props[]>(foods.products)
+  const [sort, setSort] = useState<string>("all")
 
+  // let storeFoods = 
+  console.log("Store rn:", store);
+  
+
+  const searchFood = () => {
+    const Food:Props[] = foods.products   
+    const searchFoods = Food.filter(food => food.name.toUpperCase().match(query.toUpperCase()))
+    setStore(searchFoods)
+    
+  }
 
   const filterSlider = (e:React.ChangeEvent<HTMLInputElement>) => {
     // setFilter(e.target.value)
@@ -18,20 +45,52 @@ function Shop() {
     setFilter(hold)
   }
 
+  const sortFoods = (e:React.FormEvent<HTMLSelectElement>) => {
+    setSort(e.currentTarget.value)
+    switch(sort) {
+      case "lowPrices" :
+        const low = store.sort((a, b) => a.price - b.price)
+        setStore(low)
+        break
+
+      case "highPrices" :
+          const high = store.sort((a, b) => b.price - a.price)
+          setStore(high)
+          break
+
+      case "ratings" :
+            const ratings = store.sort((a, b) => a.ratings - b.ratings)
+            setStore(ratings)
+            break
+
+      case "all" :
+            setStore(foods.products)
+            break
+
+      default :
+        setStore(foods.products)
+    }
+    
+  }
+
   return (
     <div>
         <Banner pageName="Our Shop" page="Shop"/>
         <div className="shop">
           <div className="store">
-           Sort by:  <select name="sort" id="sort">
-            <option value="newest">Newest</option>
+           Sort by: <select name="sort" id="sort" onChange={sortFoods}>
+            <option value="all">All</option>
+           <option value="ratings">Ratings</option>
+            <option value="lowPrices">Low to High</option>
+            <option value="highPrices">High to Low</option>
            </select>
-           Show:  <select name="show" id="show">
+           Show: <select name="show" id="show">
             <option value="default">Default</option>
            </select>
            <div className="foods">
-            {foods.products.map(food => <SingleShopFood key={food.id} name={food.name} id={food.id} image={food.image} price={food.price} description={food.description} mainPrice={food.mainPrice} category={food.category} ratings={food.ratings}/>)}
+            {store.map(food => <SingleShopFood key={food.id} name={food.name} id={food.id} image={food.image} price={food.price} description={food.description} mainPrice={food.mainPrice} category={food.category} ratings={food.ratings}/>)}
            </div>
+           {store.length > 6 &&
            <div className="pagination">
             <button><RxDoubleArrowLeft /></button>
             <button>1</button>
@@ -39,10 +98,11 @@ function Shop() {
             <button>3</button>
             <button><RxDoubleArrowRight /></button>
            </div>
+}
           </div>
           <div className="filter">
-            <form className="searchbox">
-              <input type="search" placeholder='Search Product' name="search" id="search" />
+            <form className="searchbox" onSubmit={(e) => e.preventDefault()}>
+              <input type="search" placeholder='Search Product' autoComplete='off' value={query} onKeyUp={searchFood} onChange={(e) => setQuery(e.target.value)} name="search" id="search" />
               <button><FiSearch /></button>
             </form>
             <h3>Category</h3>

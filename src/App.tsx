@@ -20,6 +20,7 @@ import ProductDetails from './pages/ProductDetails'
 import { useStateContext } from "./components/StoreContext"
 import Wishlist from './pages/Wishlist'
 import { Product } from './components/model'
+import Modal from './components/Modal'
 
 function App() {
  const {state, dispatch} = useStateContext()
@@ -50,7 +51,7 @@ function App() {
 
   return (
     <main>
-   
+      {state.showModal && <Modal /> }
       <Router>
       <Nav />
         <Routes>

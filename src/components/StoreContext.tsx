@@ -4,6 +4,8 @@ import { Product } from './model'
 const ShopContext = React.createContext<{ state: State, dispatch: React.Dispatch<Action> } | undefined>(undefined)
 
 interface State {
+  showModal:boolean,
+  modalContent: Modal,
   cart: Product[],
   wishlist: Product[],
   totalAmount:number
@@ -19,8 +21,18 @@ interface ContextProps {
   children: React.ReactElement
 }
 
+interface Modal {
+  title:string,
+  text:string
+}
 
-const initial: { cart: Product[], wishlist: Product[], totalAmount:number } = {
+
+const initial: { showModal:boolean, modalContent:Modal, cart: Product[], wishlist: Product[], totalAmount:number } = {
+  showModal: true,
+  modalContent: {
+    title:"",
+    text:""
+  },
   cart: [],
   wishlist: [],
   totalAmount:0
@@ -90,6 +102,12 @@ const reducer = (state: State, action: Action) => {
               return {
                 ...state,
                 wishlist: state.wishlist.filter(item => item.id !== action.payload.id)
+              }
+
+            case "CLOSE_MODAL" :
+              return {
+                ...state, 
+                showModal: false
               }
     default:
       return {
