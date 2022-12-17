@@ -26,10 +26,8 @@ function Shop() {
   const [filter, setFilter] = useState<number>(0)
   const [query, setQuery] = useState<string>("")
   const [store, setStore] = useState<Props[]>(foods.products)
+  const [oStore, setOStore] = useState<Props[]>(foods.products)
   const [sort, setSort] = useState<string>("all")
-
-  // let storeFoods = 
-  console.log("Store rn:", store);
   
 
   const searchFood = () => {
@@ -40,18 +38,34 @@ function Shop() {
   }
 
   const filterSlider = (e:React.ChangeEvent<HTMLInputElement>) => {
-    // setFilter(e.target.value)
+   
     const hold = parseInt(e.currentTarget.value)
     setFilter(hold)
+    setStore(oStore)
+    // const fullStorePrices = store.map(food => food.price)
+    // console.log(fullStorePrices);
+    
+    // const maxPrice = Math.max(...fullStorePrices)
+    // console.log(maxPrice);
+    
+    const percent = (hold / 100) * 45
+    console.log(percent);
+    const filtered = store.filter(item => item.price >= percent)
+    console.log("Filtered", filtered);
+    
+    setStore(filtered)
+    
+    
   }
 
   const sortFoods = (e:React.FormEvent<HTMLSelectElement>) => {
-    setSort(e.currentTarget.value)
-    switch(sort) {
+    const selectedValue = e.currentTarget.value
+    setSort(selectedValue)
+    switch(selectedValue) {
       case "lowPrices" :
         const low = store.sort((a, b) => a.price - b.price)
         setStore(low)
-        break
+        return
 
       case "highPrices" :
           const high = store.sort((a, b) => b.price - a.price)
@@ -78,8 +92,8 @@ function Shop() {
         <Banner pageName="Our Shop" page="Shop"/>
         <div className="shop">
           <div className="store">
-           Sort by: <select name="sort" id="sort" onChange={sortFoods}>
-            <option value="all">All</option>
+           Sort by: <select name="sort" id="sort" value={sort} onChange={sortFoods}>
+            <option value="all">Default</option>
            <option value="ratings">Ratings</option>
             <option value="lowPrices">Low to High</option>
             <option value="highPrices">High to Low</option>
