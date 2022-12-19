@@ -41,11 +41,12 @@ function Shop() {
    
     const hold = parseInt(e.currentTarget.value)
     setFilter(hold)
-    setStore(oStore)
-    const fullStorePrices = store.map(food => food.price)
+    const copy = foods.products
+    setStore(copy)
+    const fullStorePrices = copy.map(food => food.price)
     const maxPrice = Math.max(...fullStorePrices)
     const percent = (hold / 100) * maxPrice
-    const filtered = store.filter(item => item.price >= percent)
+    const filtered = copy.filter(item => item.price >= percent)
     setStore(filtered)
     
     
