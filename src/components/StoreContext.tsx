@@ -4,16 +4,16 @@ import { Product } from './model'
 const ShopContext = React.createContext<{ state: State, dispatch: React.Dispatch<Action> } | undefined>(undefined)
 
 interface State {
-  showModal:boolean,
+  showModal: boolean,
   modalContent: Modal,
   cart: Product[],
   wishlist: Product[],
-  totalAmount:number
+  totalAmount: number
 }
 
 interface Action {
   type: string,
-  payload: Product
+  payload?: any
 }
 
 
@@ -22,20 +22,20 @@ interface ContextProps {
 }
 
 interface Modal {
-  title:string,
-  text:string
+  title: string,
+  text: string
 }
 
 
-const initial: { showModal:boolean, modalContent:Modal, cart: Product[], wishlist: Product[], totalAmount:number } = {
-  showModal: true,
+const initial: { showModal: boolean, modalContent: Modal, cart: Product[], wishlist: Product[], totalAmount: number } = {
+  showModal: false,
   modalContent: {
-    title:"",
-    text:""
+    title: "",
+    text: ""
   },
   cart: [],
   wishlist: [],
-  totalAmount:0
+  totalAmount: 0
 }
 
 
@@ -51,64 +51,96 @@ export function useStateContext() {
 const reducer = (state: State, action: Action) => {
   switch (action.type) {
     case "AddToCart":
-      console.log(state);
       const newCart = [...state.cart, action.payload]
       return {
         ...state,
+        showModal: true,
+        modalContent: {
+          title: "Added to Cart",
+          text: `${action.payload.name} added to cart successfully`
+        },
         cart: newCart,
         wishlist: state.wishlist.filter(item => item.id !== action.payload.id),
         totalAmount: newCart.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
       }
 
     case "AddToWishlist":
-      console.log(state);
       const removeCart = state.cart.filter(item => item.id !== action.payload.id)
       return {
         ...state,
+        showModal: true,
+        modalContent: {
+          title: "Added to Wishlist",
+          text: `${action.payload.name} added to wishlist successfully`
+        },
         cart: removeCart,
         wishlist: [...state.wishlist, action.payload],
         totalAmount: removeCart.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
-        
+
       }
 
-      case "UpdateCart":
-        const update = state.cart.map(item => item.id === action.payload.id ? {...item, quantity:item.quantity++} : item)
-        console.log(update);
-        
-        return {
-          ...state,
-          cart: update,
-          totalAmount: update.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
-        }
+    case "UpdateCart":
+      const update = state.cart.map(item => item.id === action.payload.id ? { ...item, quantity: item.quantity++ } : item)
+      console.log(update);
 
-        case "reduceQuantity":
-          const reduce = state.cart.map(item => item.id === action.payload.id ? {...item, quantity:item.quantity--} : item)
+      return {
+        ...state,
+        showModal: true,
+        modalContent: {
+          title: "Cart item increased",
+          text: `Quantity of ${action.payload.name} in cart has been increased by 1`
+        },
+        cart: update,
+        totalAmount: update.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
+      }
 
-          return {
-            ...state,
-            cart:reduce,
-            totalAmount: reduce.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
-          }
+    case "reduceQuantity":
+      const reduce = state.cart.map(item => item.id === action.payload.id ? { ...item, quantity: item.quantity-- } : item)
 
-          case "removeFromCart" :
-            const remove = state.cart.filter(item => item.id !== action.payload.id)
-            return {
-              ...state,
-              cart: remove,
-              totalAmount: remove.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
-            }
+      return {
+        ...state,
+        showModal: true,
+        modalContent: {
+          title: "Cart item decreased",
+          text: `Quantity of ${action.payload.name} in cart has been decreased by 1`
+        },
+        cart: reduce,
+        totalAmount: reduce.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
+      }
 
-            case "removeFromWishlist":
-              return {
-                ...state,
-                wishlist: state.wishlist.filter(item => item.id !== action.payload.id)
-              }
+    case "removeFromCart":
+      const remove = state.cart.filter(item => item.id !== action.payload.id)
+      return {
+        ...state,
+        showModal: true,
+        modalContent: {
+          title: "Removed from cart",
+          text: `${action.payload.name} removed from cart successfully`
+        },
+        cart: remove,
+        totalAmount: remove.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
+      }
 
-            case "CLOSE_MODAL" :
-              return {
-                ...state, 
-                showModal: false
-              }
+    case "removeFromWishlist":
+      return {
+        ...state,
+        showModal: true,
+        modalContent: {
+          title: "Removed from wishlist",
+          text: `${action.payload.name} removed from wishlist successfully`
+        },
+        wishlist: state.wishlist.filter(item => item.id !== action.payload.id)
+      }
+
+    case "CLOSE_MODAL":
+      return {
+        ...state,
+        showModal: false,
+        modalContent: {
+          title: "",
+          text: ""
+        },
+      }
     default:
       return {
         ...state
@@ -119,11 +151,6 @@ const reducer = (state: State, action: Action) => {
 
 const StoreContext = ({ children }: ContextProps) => {
   const [state, dispatch] = useReducer(reducer, initial)
-
-
-
-
-
 
   const sharedState = { state, dispatch }
 

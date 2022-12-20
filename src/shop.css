@@ -151,7 +151,11 @@
 }
 
 .cart {
-    @apply px-4 md:px-12 lg:px-40 py-4 py-20 overflow-scroll
+    @apply px-4 md:px-12 lg:px-40 py-4 py-20
+}
+
+.cart .table-container {
+    @apply overflow-scroll
 }
 
 .cart table, .cart table tbody {
@@ -163,7 +167,7 @@
 }
 
 .cart table tr td {
-    @apply w-[300px] md:w-1/5 p-4 text-center
+    @apply w-[300px] md:w-1/5 p-2 md:p-4 text-center
 }
 
 .cart table tr td img {
@@ -171,7 +175,7 @@
 }
 
 .cart table tr td button {
-    @apply shadow px-4 py-2
+    @apply shadow px-4 py-2 
 }
 
 .cart .couponNtotal {
@@ -252,7 +256,7 @@
 }
 
 .modal {
-    @apply bg-green-500 p-4 text-white absolute border-b-8 border-[#FF9F0D] right-0 top-20 rounded-l min-w-[500px]
+    @apply bg-green-500 p-4 text-white fixed z-50 border-b-8 border-[#FF9F0D] right-0 top-5 md:top-20 rounded-l w-11/12 md:min-w-[500px]
 }
 
 .modal h4 {

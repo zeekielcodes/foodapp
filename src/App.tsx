@@ -21,6 +21,7 @@ import { useStateContext } from "./components/StoreContext"
 import Wishlist from './pages/Wishlist'
 import { Product } from './components/model'
 import Modal from './components/Modal'
+import MobileNav from './components/MobileNav'
 
 function App() {
  const {state, dispatch} = useStateContext()
@@ -53,7 +54,8 @@ function App() {
     <main>
       {state.showModal && <Modal /> }
       <Router>
-      <Nav />
+        {window.innerWidth < 480 ? <MobileNav /> : <Nav />}
+      
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />

@@ -40,6 +40,14 @@ nav {
   @apply bg-[#0D0D0D] text-white flex justify-between items-center px-40 py-4
 }
 
+nav.mobile {
+  @apply p-4
+}
+
+nav.mobile button {
+  @apply shadow px-4 py-2 bg-[#FF9F0D] text-2xl
+}
+
 nav ul {
   @apply flex gap-6 font-Inter
 }
@@ -254,4 +262,16 @@ section.time div p {
 
 .mid-menu .overlay div h5 {
   @apply my-2 text-[30px] lg:text-[40px]
+}
+
+.chefs {
+  @apply px-4 md:px-12 lg:px-40 py-8 lg:py-20 flex gap-4 flex-wrap text-center
+}
+
+.chefs h3 {
+  @apply text-[20px] font-BoldHelvetica mt-2
+}
+
+.chefs .chef-card {
+  @apply w-[47%] md:w-[30%] lg:w-[22%]
 }

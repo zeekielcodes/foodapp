@@ -4,7 +4,7 @@ import { useStateContext } from './StoreContext'
 function Modal() {
     const {state, dispatch} = useStateContext()
     useEffect(() => {
-        // setTimeout(() => dispatch({type:"CLOSE_MODAL"}), 5000)
+        setTimeout(() => dispatch({type:"CLOSE_MODAL"}), 3000)
     })
   return (
     <div className="modal">

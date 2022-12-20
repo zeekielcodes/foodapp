@@ -13,7 +13,8 @@ function Cart() {
         <Banner pageName="Shopping Cart" page="Shopping Cart"/>
         {state.cart.length > 0 ?
         <div className="cart" >
-          <table>
+          <div className="table-container">
+            <table>
             <tbody>
               <tr>
               <td>Product</td>
@@ -25,6 +26,8 @@ function Cart() {
             {state.cart.map(item => <SingleCartItem key={item.id} id={item.id} name={item.name} price={item.price} image={item.image} quantity={item.quantity} ratings={item.ratings} />)}
             </tbody>
            </table>
+          </div>
+          
            <div className="couponNtotal">
             <section className="coupon">
               <h5>Coupon Code</h5>
