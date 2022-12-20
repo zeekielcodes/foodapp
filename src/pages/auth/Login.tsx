@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import Banner from '../../components/Banner'
-import { Link } from "react-router-dom"
-import { FcGoogle} from "react-icons/fc"
-import { BsApple } from "react-icons/bs"
+import { Link, Navigate } from "react-router-dom"
 import { FiLock, FiMail } from "react-icons/fi"
 import { auth } from '../../firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth'
+import { useStateContext } from '../../components/StoreContext'
+import AuthSignins from '../../components/AuthSignins'
 
 function Login() {
+    const {state, dispatch} = useStateContext()
     const [email, setEmail] = useState<string>("")
     const [password, setPassword] = useState<string>("")
 
@@ -15,10 +16,24 @@ function Login() {
         e.preventDefault()
         const user = {email, password}
         signInWithEmailAndPassword(auth, user.email, user.password)
-        .then(userCredential => console.log(userCredential))
-        .catch(error => console.log(error))
+        .then(userCredential => {
+            const user = userCredential.user
+            const modalContent = {
+                title: "Logged in",
+                text: "Account logged in successfully"
+              }
+            dispatch({type:"OPEN_MODAL", payload:modalContent})
+            dispatch({type:"LOGGED_IN", payload:user})
+        })
+        .catch(error => {
+            const modalContent = {
+                title: `${error.code}`,
+                text: `${error.message}`
+              }
+            dispatch({type:"OPEN_MODAL", payload:modalContent})
+        })
     }
-
+if (!state.isAuthenticated) {
   return (
     <div>
         <Banner pageName="Sign in" page="Sign in"/>
@@ -42,21 +57,18 @@ function Login() {
                     <h3>OR</h3>
                     <hr />
                 </div>
-
-                <div className="auths">
-                  <FcGoogle />
-                  <button>Sign in with Google</button>
-                </div>
-                <div className="auths">
-                    <BsApple />
-                    <button>Sign in with Apple</button>
-                </div>
+                <AuthSignins />
                 <p className="create-account"><Link to="/signup">Create an account</Link></p>
                 
             </form>
         </div>
     </div>
   )
+} else {
+    return (
+        <Navigate to="/profile" />
+    )
+}
 }
 
 export default Login

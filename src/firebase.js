@@ -19,7 +19,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-const db = getFirestore(app);
+export const db = getFirestore(app);
 const usersCollection = collection(db, "users")
 
 // Get a list of cities from your database
@@ -31,26 +31,6 @@ const usersCollection = collection(db, "users")
 // }
 
 export const createUser = user => {
-    createUserWithEmailAndPassword(auth, user.email, user.password)
-  .then((userCredential) => {
-    console.log(userCredential);
-    const createdUser = userCredential.user;
-    setDoc(doc(db, "users", createdUser.uid), {
-      Name: user.name
-    })
-    return usersCollection
-    // usersCollection.doc(user.id).set({
-    //     "Name": user.name
-    // })
-    // addDoc(usersCollection, user);
-    // ...
-  }).catch(error => console.log(error))
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log(error);
-    // ..
-  });
    
 }
 

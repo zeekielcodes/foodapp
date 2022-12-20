@@ -4,6 +4,8 @@ import { Product } from './model'
 const ShopContext = React.createContext<{ state: State, dispatch: React.Dispatch<Action> } | undefined>(undefined)
 
 interface State {
+  isAuthenticated: boolean,
+  user: any,
   showModal: boolean,
   modalContent: Modal,
   cart: Product[],
@@ -27,7 +29,9 @@ interface Modal {
 }
 
 
-const initial: { showModal: boolean, modalContent: Modal, cart: Product[], wishlist: Product[], totalAmount: number } = {
+const initial: { isAuthenticated:boolean, user:any, showModal: boolean, modalContent: Modal, cart: Product[], wishlist: Product[], totalAmount: number } = {
+  isAuthenticated:false,
+  user: null,
   showModal: false,
   modalContent: {
     title: "",
@@ -120,12 +124,6 @@ const reducer = (state: State, action: Action) => {
 
       }
 
-    case "localStorageWishlist":
-      return {
-        ...state,
-        wishlist: [...state.wishlist, ...action.payload]
-      }
-
     case "CLOSE_MODAL":
       return {
         ...state,
@@ -134,6 +132,15 @@ const reducer = (state: State, action: Action) => {
           title: "",
           text: ""
         },
+      }
+
+    case "LOGGED_IN" :
+      console.log(action.payload);
+      
+      return {
+        ...state,
+        isAuthenticated: true,
+        user: action.payload
       }
     default:
       return {

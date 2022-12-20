@@ -15,7 +15,7 @@ function About() {
         <div className="hero">
           <img src={about} alt="" />
           <div className="hero-text">
-            <h2>Food is an important part Of a balanced Diet</h2>
+            <h2>Food is an important part of a balanced diet</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.</p>
             <div className="flex gap-2">
               <button className='bg-[#FF9F0D] text-white'>Show more</button>

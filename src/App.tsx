@@ -22,6 +22,7 @@ import Wishlist from './pages/Wishlist'
 import { Product } from './components/model'
 import Modal from './components/Modal'
 import MobileNav from './components/MobileNav'
+import Profile from './pages/auth/Profile'
 
 function App() {
  const {state, dispatch} = useStateContext()
@@ -74,6 +75,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/chefs" element={<Chefs />} />
           <Route path="/faqs" element={<FAQs />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/*" element={<Error />} />
         </Routes>

@@ -86,14 +86,11 @@ function Shop() {
         <Banner pageName="Our Shop" page="Shop"/>
         <div className="shop">
           <div className="store">
-           Sort by: <select name="sort" id="sort" value={sort} onChange={sortFoods}>
+           Sort by : <select name="sort" id="sort" value={sort} onChange={sortFoods}>
             <option value="all">Default</option>
            <option value="ratings">Ratings</option>
             <option value="lowPrices">Low to High</option>
             <option value="highPrices">High to Low</option>
-           </select>
-           Show: <select name="show" id="show">
-            <option value="default">Default</option>
            </select>
            <div className="foods">
             {store.map(food => <SingleShopFood key={food.id} name={food.name} id={food.id} image={food.image} price={food.price} description={food.description} mainPrice={food.mainPrice} category={food.category} ratings={food.ratings}/>)}
