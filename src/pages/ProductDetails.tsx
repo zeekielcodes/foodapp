@@ -3,6 +3,7 @@ import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { BiHeart, BiShoppingBag } from 'react-icons/bi'
 import { useNavigate, useParams } from "react-router-dom"
 import Banner from '../components/Banner'
+import { useStateContext } from '../components/StoreContext'
 import foods from "../shop.json"
 
 interface Props {
@@ -14,6 +15,57 @@ function ProductDetails() {
     const {id} = useParams() as { id: string }
     const nav = useNavigate()
     let [quantity, setQuantity] = useState<number>(1)
+    const {state, dispatch} = useStateContext()
+
+    const addToWishlist = () => {
+    
+      // const item = {
+      //   id,
+      //   name,
+      //   price,
+      //   image,
+      //   quantity: 1,
+      //   ratings
+      // }
+      const there = state.wishlist.find(item => item.id === parseInt(id))
+      if(!there) {
+        const found = foods.products.find(item => item.id === parseInt(id))
+        const modalContent = {
+          title: "Added to Wishlist",
+          text: `${found?.name} has been added to wishlist successfully`
+        }
+        dispatch({type:"AddToWishlist", payload: found})
+        dispatch({type:"OPEN_MODAL", payload:modalContent})
+      } else {
+        const modalContent = {
+          title: "Already on Wishlist",
+          text: `${there.name} is already on wishlist`
+        }
+        dispatch({type:"OPEN_MODAL", payload:modalContent})
+      }
+      
+    }
+
+    const addToCart = () => {
+      const there = state.cart.find(item => item.id === parseInt(id))
+      if(!there) {
+        const found = foods.products.find(item => item.id === parseInt(id))
+        const modalContent = {
+          title: "Added to Cart",
+          text: `${found?.name} has been added to cart successfully`
+        }
+        dispatch({type:"AddToCart", payload: {...found, quantity}})
+        dispatch({type:"OPEN_MODAL", payload:modalContent})
+      } else {
+        const modalContent = {
+          title: "Cart item updated",
+          text: `Quantity of ${there.name} in cart has been increased`
+        }
+        dispatch({type:"UpdateCart", payload: {...there, quantity}})
+        dispatch({type:"OPEN_MODAL", payload:modalContent})
+      }
+      
+    }
    
    
   return (
@@ -37,10 +89,10 @@ function ProductDetails() {
               <div className="plusNminus">
             <button onClick={()=> setQuantity(quantity-1)} disabled={quantity<=1}>-</button><button>{quantity}</button><button onClick={()=> setQuantity(quantity+1)}>+</button>
            </div>
-           <button className='addcart'><BiShoppingBag /> Add to Cart</button>
+           <button className='addcart' onClick={addToCart}><BiShoppingBag /> Add to Cart</button>
             </div>
            <hr className='mt-6 mb-4' />
-           <button className='flex items-center text-[16px] gap-2'><BiHeart /> Add to Wishlist</button>
+           <button onClick={addToWishlist} className='flex items-center text-[16px] gap-2'><BiHeart /> Add to Wishlist</button>
            <p className='my-2'>Category : {food.category}</p>
           </div>
         </div>

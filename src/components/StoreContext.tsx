@@ -54,11 +54,6 @@ const reducer = (state: State, action: Action) => {
       const newCart = [...state.cart, action.payload]
       return {
         ...state,
-        showModal: true,
-        modalContent: {
-          title: "Added to Cart",
-          text: `${action.payload.name} added to cart successfully`
-        },
         cart: newCart,
         wishlist: state.wishlist.filter(item => item.id !== action.payload.id),
         totalAmount: newCart.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
@@ -68,11 +63,6 @@ const reducer = (state: State, action: Action) => {
       const removeCart = state.cart.filter(item => item.id !== action.payload.id)
       return {
         ...state,
-        showModal: true,
-        modalContent: {
-          title: "Added to Wishlist",
-          text: `${action.payload.name} added to wishlist successfully`
-        },
         cart: removeCart,
         wishlist: [...state.wishlist, action.payload],
         totalAmount: removeCart.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
@@ -80,16 +70,11 @@ const reducer = (state: State, action: Action) => {
       }
 
     case "UpdateCart":
-      const update = state.cart.map(item => item.id === action.payload.id ? { ...item, quantity: item.quantity++ } : item)
+      const update = state.cart.map(item => item.id === action.payload.id ? { ...item, quantity: action.payload.quantity ? item.quantity + action.payload.quantity : item.quantity++ } : item)
       console.log(update);
 
       return {
         ...state,
-        showModal: true,
-        modalContent: {
-          title: "Cart item increased",
-          text: `Quantity of ${action.payload.name} in cart has been increased by 1`
-        },
         cart: update,
         totalAmount: update.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
       }
@@ -99,12 +84,7 @@ const reducer = (state: State, action: Action) => {
 
       return {
         ...state,
-        showModal: true,
-        modalContent: {
-          title: "Cart item decreased",
-          text: `Quantity of ${action.payload.name} in cart has been decreased by 1`
-        },
-        cart: reduce,
+         cart: reduce,
         totalAmount: reduce.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
       }
 
@@ -130,6 +110,20 @@ const reducer = (state: State, action: Action) => {
           text: `${action.payload.name} removed from wishlist successfully`
         },
         wishlist: state.wishlist.filter(item => item.id !== action.payload.id)
+      }
+    
+    case "OPEN_MODAL":     
+      return {
+        ...state,
+        showModal: true,
+        modalContent: action.payload
+
+      }
+
+    case "localStorageWishlist":
+      return {
+        ...state,
+        wishlist: [...state.wishlist, ...action.payload]
       }
 
     case "CLOSE_MODAL":

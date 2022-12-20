@@ -45,7 +45,7 @@ nav.mobile {
 }
 
 nav.mobile button {
-  @apply shadow px-4 py-2 bg-[#FF9F0D] text-2xl
+  @apply shadow flex justify-center items-center bg-[#FF9F0D] text-2xl
 }
 
 nav ul {
@@ -269,7 +269,7 @@ section.time div p {
 }
 
 .chefs h3 {
-  @apply text-[20px] font-BoldHelvetica mt-2
+  @apply text-[16px] md:text-[20px] font-BoldHelvetica mt-2
 }
 
 .chefs .chef-card {

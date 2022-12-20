@@ -1,0 +1,51 @@
+/* .about {
+    @apply
+} */
+
+.about .hero {
+    @apply flex flex-col md:flex-row gap-4 lg:gap-12 items-center px-4 lg:px-40 py-8 lg:py-20
+}
+
+.hero img, .hero-text {
+    @apply w-full md:w-1/2
+}
+
+.hero .hero-text h2 {
+    @apply text-[36px] lg:text-[48px] font-BoldHelvetica
+}
+
+.hero-text p {
+    @apply text-[#4F4F4F] text-[16px] my-4
+}
+
+.hero-text button {
+    @apply px-6 py-2 rounded
+}
+
+.about .features {
+    @apply px-4 lg:px-40 py-8 lg:py-20 text-center flex flex-col gap-2 items-center
+}
+
+.about .features p {
+    @apply w-11/12 lg:w-1/2 text-center mb-4 text-[#4F4F4F] text-[16px]
+}
+
+.about .features h3 {
+    @apply text-[40px] font-BoldHelvetica
+}
+
+.about .featurelist {
+    @apply flex flex-col md:flex-row gap-6 justify-between mt-4
+}
+
+.about .featurelist div {
+    @apply flex items-center flex-col text-center p-4
+}
+
+.featurelist div h4 {
+    @apply text-[24px] font-BoldHelvetica my-4
+}
+
+.about .featurelist div p {
+    @apply w-full
+}

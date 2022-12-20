@@ -33,6 +33,9 @@ function App() {
       parsed.forEach(item => 
         state.cart.find(food => food.id === item.id) ? dispatch({type:"UpdateCart", payload:item}) :
         dispatch({type:"AddToCart", payload: item}))
+      console.log(parsed);
+      
+      // dispatch({type:"localStorageCart", payload:parsed})
     }    
 
     const savedWishlist = localStorage.getItem("wishlist")

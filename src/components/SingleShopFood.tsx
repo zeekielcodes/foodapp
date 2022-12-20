@@ -30,14 +30,24 @@ function SingleShopFood({id, name, image, price, mainPrice, description, categor
     const isInCart = state.cart.find(item => item.id === id)
     console.log(isInCart);
     if(isInCart) {
+      const modalContent = {
+        title: "Cart item increased",
+        text: `Quantity of ${name} in cart has been increased`
+      }
       dispatch({type:"UpdateCart", payload:item})
+      dispatch({type:"OPEN_MODAL", payload:modalContent})
     } else {
-    
+      const modalContent = {
+        title: "Added to Cart",
+        text: `${name} has been added to cart successfully`
+      }
    dispatch({type:"AddToCart", payload: item})
+   dispatch({type:"OPEN_MODAL", payload:modalContent})
     }
   }
 
   const addToWishlist = () => {
+    
     const item = {
       id,
       name,
@@ -48,7 +58,18 @@ function SingleShopFood({id, name, image, price, mainPrice, description, categor
     }
     const there = state.wishlist.find(item => item.id === id)
     if(!there) {
+      const modalContent = {
+        title: "Added to Wishlist",
+        text: `${name} has been added to wishlist successfully`
+      }
       dispatch({type:"AddToWishlist", payload: item})
+      dispatch({type:"OPEN_MODAL", payload:modalContent})
+    } else {
+      const modalContent = {
+        title: "Already on Wishlist",
+        text: `${name} is already on wishlist`
+      }
+      dispatch({type:"OPEN_MODAL", payload:modalContent})
     }
     
   }

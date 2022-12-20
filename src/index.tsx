@@ -5,6 +5,7 @@ import './auth.css';
 import './faqs.css';
 import "./shop.css";
 import "./checkout.css";
+import "./styles.css";
 import App from './App';
 import StoreContext from './components/StoreContext';
 

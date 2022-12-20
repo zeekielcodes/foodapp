@@ -154,7 +154,13 @@
     @apply px-4 md:px-12 lg:px-40 py-4 py-20
 }
 
+.cart .table-container::-webkit-scrollbar {
+    display: none;
+}
+
 .cart .table-container {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     @apply overflow-scroll
 }
 
@@ -220,15 +226,15 @@
 }
 
 .wishlist-item img {
-    @apply h-full
+    @apply h-full w-auto
 }
 
 .wishlist-item .item-detail h3, .wishlist-item .item-detail h4 {
-    @apply font-BoldHelvetica
+    @apply font-BoldHelvetica text-sm
 }
 
 .wishlist-item .item-detail h3 {
-    @apply text-[16px] lg:text-[18px] lg:mb-2
+    @apply text-[15px] lg:text-[18px] lg:mb-2
 }
 
 .wishlist-item .item-detail button {
@@ -256,9 +262,9 @@
 }
 
 .modal {
-    @apply bg-green-500 p-4 text-white fixed z-50 border-b-8 border-[#FF9F0D] right-0 top-5 md:top-20 rounded-l w-11/12 md:min-w-[500px]
+    @apply bg-green-500 p-4 text-white text-center fixed z-50 left-0 right-0 top-0 rounded-l w-full
 }
 
 .modal h4 {
-    @apply font-bold text-xl mb-2
+    @apply font-bold text-xl mb-2 font-Inter
 }
