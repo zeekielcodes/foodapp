@@ -2,8 +2,8 @@
     @apply
 } */
 
-.about .hero {
-    @apply flex flex-col md:flex-row gap-4 lg:gap-12 items-center px-4 lg:px-40 py-8 lg:py-20
+.about .hero, .homepage .hero {
+    @apply flex flex-col md:flex-row gap-8 lg:gap-12 items-center px-4 lg:px-40 py-8 lg:py-20
 }
 
 .hero img, .hero-text {
@@ -14,7 +14,7 @@
     @apply text-[36px] lg:text-[48px] font-BoldHelvetica
 }
 
-.hero-text p {
+.about .hero-text p {
     @apply text-[#4F4F4F] text-[16px] my-4
 }
 
@@ -48,4 +48,48 @@
 
 .about .featurelist div p {
     @apply w-full
+}
+
+.profile {
+    @apply px-4 md:px-12 lg:px-40 py-8 lg:py-20
+}
+
+.profile .controls {
+    @apply flex gap-4
+}
+
+.profile .controls button {
+    @apply w-1/3 py-2
+}
+
+.hero-text ul li {
+    @apply my-4 flex items-center gap-2
+}
+
+.hero-text ul {
+    @apply mb-8
+}
+
+.hero .images {
+    @apply w-full md:w-1/2
+}
+
+.hero .images img {
+    @apply w-full
+}
+
+.hero .images div img {
+    @apply w-[48%]
+}
+
+.category {
+    @apply px-4 md:px-12 lg:px-40 py-8 lg:py-20 flex flex-col justify-center items-center bg-[#0D0D0D]
+}
+
+.category div {
+    @apply flex flex-wrap gap-4
+}
+
+.category div img {
+    @apply w-[47%] md:w-[23%]
 }

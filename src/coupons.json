@@ -1,0 +1,16 @@
+{
+    "coupons": [
+        {
+            "id":1,
+            "code": "THEFACE",
+            "type": "flat",
+            "discount": 20
+        },
+        {
+            "id":1,
+            "code": "FOODTUCKS",
+            "type": "percentage",
+            "discount": 40
+        }
+    ]
+}

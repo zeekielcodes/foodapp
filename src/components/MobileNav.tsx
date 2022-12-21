@@ -26,7 +26,7 @@ function MobileNav() {
                 <button className='h-[40px] w-[40px]' onClick={() => setShow(!show)}><RxHamburgerMenu /></button>
             </nav>
             {show &&
-                <div className="h-screen p-4 bg-black fixed top-0 left-0 right-0 bottom-0">
+                <div className="h-screen p-4 bg-black fixed z-50 top-0 left-0 right-0 bottom-0">
                     <button className='bg-[#FF9F0D] text-white shadow h-[40px] w-[40px]' onClick={() => setShow(!show)}>X</button>
                     <ul className='text-white flex justify-center items-center flex-col gap-4 h-4/5'>
                         <li className='py-4 w-full text-center hover:bg-white hover:text-black'><NavLink to="/" end>Home</NavLink></li>

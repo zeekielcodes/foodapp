@@ -142,6 +142,14 @@ const reducer = (state: State, action: Action) => {
         isAuthenticated: true,
         user: action.payload
       }
+
+    case "LOGGED_OUT":
+      return {
+        ...state,
+        isAuthenticated:false,
+        user:null
+      }
+
     default:
       return {
         ...state
