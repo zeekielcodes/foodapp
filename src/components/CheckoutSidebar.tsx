@@ -29,11 +29,6 @@ function CheckoutSidebar() {
        const payNow = () => {
             pay({
                   callback: (response) => {
-                        const modalContent = {
-                              title: `Payment`,
-                              text: `${response}`
-                            }
-                            dispatch({type:"OPEN_MODAL", payload:modalContent})
                      console.log(response);
                   //     closePaymentModal() // this will close the modal programmatically
                   },

@@ -18,7 +18,8 @@ module.exports = {
       backgroundImage: {
         "banner": "url('./assets/images/banner.png')",
         "banner2": "url('./assets/images/banner2.png')",
-        "store": "url('./assets/images/ad.png')"
+        "store": "url('./assets/images/ad.png')",
+        "homeHero": "url('./assets/images/homepage.png')"
 
       },
       boxShadow: {

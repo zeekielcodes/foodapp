@@ -7,6 +7,7 @@ interface State {
   isAuthenticated: boolean,
   user: any,
   showModal: boolean,
+  coupon: any,
   modalContent: Modal,
   cart: Product[],
   wishlist: Product[],
@@ -29,10 +30,11 @@ interface Modal {
 }
 
 
-const initial: { isAuthenticated:boolean, user:any, showModal: boolean, modalContent: Modal, cart: Product[], wishlist: Product[], totalAmount: number } = {
-  isAuthenticated:false,
+const initial: { isAuthenticated: boolean, user: any, showModal: boolean, coupon: any, modalContent: Modal, cart: Product[], wishlist: Product[], totalAmount: number } = {
+  isAuthenticated: false,
   user: null,
   showModal: false,
+  coupon: null,
   modalContent: {
     title: "",
     text: ""
@@ -88,7 +90,7 @@ const reducer = (state: State, action: Action) => {
 
       return {
         ...state,
-         cart: reduce,
+        cart: reduce,
         totalAmount: reduce.map(item => item.price * item.quantity).reduce((acc, price) => acc + price, 0)
       }
 
@@ -115,8 +117,8 @@ const reducer = (state: State, action: Action) => {
         },
         wishlist: state.wishlist.filter(item => item.id !== action.payload.id)
       }
-    
-    case "OPEN_MODAL":     
+
+    case "OPEN_MODAL":
       return {
         ...state,
         showModal: true,
@@ -134,9 +136,45 @@ const reducer = (state: State, action: Action) => {
         },
       }
 
-    case "LOGGED_IN" :
+    case "ADD_COUPON":
+      console.log(state);
+      switch (action.payload.type) {
+        case "flat":
+          const discount = action.payload.discount
+          return {
+            ...state,
+            showModal: true,
+            modalContent: {
+              title: `Coupon code "${action.payload.code}" applied`,
+              text: `$${action.payload.discount} has been deducted from your cart total`
+            },
+            coupon: action.payload,
+            totalAmount: state.totalAmount - discount
+          }
+
+        case "percentage":
+          const reduction = (action.payload.discount / 100) * state.totalAmount
+          return {
+            ...state,
+            showModal: true,
+            modalContent: {
+              title: `Coupon code "${action.payload.code}" applied`,
+              text: `${action.payload.discount}% has been deducted from your cart total`
+            },
+            coupon: action.payload,
+            totalAmount: state.totalAmount - reduction
+          }
+
+
+        default:
+          return state
+      }
+
+
+
+    case "LOGGED_IN":
       console.log(action.payload);
-      
+
       return {
         ...state,
         isAuthenticated: true,
@@ -146,8 +184,8 @@ const reducer = (state: State, action: Action) => {
     case "LOGGED_OUT":
       return {
         ...state,
-        isAuthenticated:false,
-        user:null
+        isAuthenticated: false,
+        user: null
       }
 
     default:
@@ -160,6 +198,7 @@ const reducer = (state: State, action: Action) => {
 
 const StoreContext = ({ children }: ContextProps) => {
   const [state, dispatch] = useReducer(reducer, initial)
+
 
   const sharedState = { state, dispatch }
 

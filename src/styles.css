@@ -59,7 +59,7 @@
 }
 
 .profile .controls button {
-    @apply w-1/3 py-2
+    @apply w-1/3 py-4
 }
 
 .hero-text ul li {
