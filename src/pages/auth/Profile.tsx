@@ -37,8 +37,8 @@ function Profile() {
                 <Banner pageName="My Account" page="Profile" />
                 <div className="profile">
                     <div className="controls">
-                        <button onClick={() => setDisplay(true)} className={display ? "text-[#FF9F0D]" : "text-red-400"}>Profile</button>
-                        <button onClick={() => setDisplay(false)} className={!display ? "text-[#FF9F0D]" : "text-red-400"}>Orders</button>
+                        <button onClick={() => setDisplay(true)} className={display ? "text-[#FF9F0D] shadow" : "text-black"}>Profile</button>
+                        <button onClick={() => setDisplay(false)} className={!display ? "text-[#FF9F0D] shadow" : "text-black"}>Orders</button>
                         <button onClick={logOut}>Log out</button>
                     </div>
 
