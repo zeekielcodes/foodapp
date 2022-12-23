@@ -9,7 +9,7 @@ function CheckoutSidebar() {
       const config = {
             public_key: 'FLWPUBK_TEST-c90fdc1ac72df9d3783f81917093134c-X',
             tx_ref: Date.now().toString(),
-            amount: state.totalAmount,
+            amount: state.totalAmount - state.discount,
             currency: 'USD',
             payment_options: 'card,mobilemoney,ussd',
             customer: {
@@ -26,14 +26,18 @@ function CheckoutSidebar() {
         
        const pay =  useFlutterwave(config)
 
-       const payNow = () => {
+       const payWithFlutter = () => {
             pay({
                   callback: (response) => {
                      console.log(response);
-                  //     closePaymentModal() // this will close the modal programmatically
+                      closePaymentModal() // this will close the modal programmatically
                   },
                   onClose: () => {},
                 });
+       }
+
+       const payWithPayStack = () => {
+
        }
 
   return (
@@ -59,14 +63,15 @@ function CheckoutSidebar() {
             </div>
             <div className='flex justify-between py-2 border-none font-BoldHelvetica text-[#4F4F4F]'>
                   <h6>Discount</h6>
-                  <h6>N/A</h6>
+                  <h6>{state.coupon ? state.coupon?.type === "flat" ? `$${(state.coupon.discount).toFixed(2)}` : `${(state.coupon.discount)}%` : "N/A"}</h6>
             </div>
             <hr />
             <div className='flex justify-between py-2 border-none font-BoldHelvetica'>
                   <h6>Total</h6>
-                  <h6>${(state.totalAmount).toFixed(2)}</h6>
+                  <h6>${state.discount ? (state.totalAmount - state.discount).toFixed(2) : state.totalAmount}</h6>
             </div>
-          <button className='bg-[#FF9F0D] w-full text-white rounded h-[40px]' onClick={payNow}>Place an order</button>
+          <button className='bg-[#FF9F0D] w-full text-white rounded h-[40px]' onClick={payWithFlutter}>Pay with Flutterwave</button>
+          <button className='bg-[#FF9F0D] w-full text-white rounded h-[40px]' onClick={payWithPayStack}>Pay with PayStack</button>
           
     </div>
   )

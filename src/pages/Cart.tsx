@@ -81,10 +81,14 @@ function Cart() {
                   <h6>Shipping Charge</h6>
                   <h6>$00.00</h6>
                 </div>
+                <div className='flex justify-between font-Inter text-[#4F4F4F] px-4 py-2 border-none'>
+                  <h6>Discount</h6>
+                  <h6>{state.coupon ? state.coupon?.type === "flat" ? `$${(state.coupon.discount).toFixed(2)}` : `${(state.coupon.discount)}%` : "N/A"}</h6>
+                </div>
                 <hr className='my-2' />
                 <div className='flex justify-between px-4 py-2 border-none font-BoldHelvetica'>
                   <h6>Total Amount</h6>
-                  <h6>${(state.totalAmount).toFixed(2)}</h6>
+                  <h6>${state.discount ? (state.totalAmount - state.discount).toFixed(2) : state.totalAmount}</h6>
                 </div>
               </div>
               <button onClick={() => nav("/checkout")} className='w-full mt-2 bg-[#FF9F0D] text-[18px] py-2 text-white rounded font-Inter'>Proceed to Checkout</button>

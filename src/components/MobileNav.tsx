@@ -4,10 +4,12 @@ import { FiSearch } from 'react-icons/fi'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import logo from "../assets/Foodtuck.png"
+import { useStateContext } from './StoreContext'
 
 function MobileNav() {
     const [show, setShow] = useState(false)
     const location = useLocation()
+    const {state, dispatch} = useStateContext()
 
     useEffect(() => {
         setShow(false)
@@ -20,8 +22,8 @@ function MobileNav() {
                 </Link>
                 <div className="icons text-[18px]">
                     <Link to="/login"><BiUser /></Link>
-                    <Link to="/wishlist"><BiHeart /></Link>
-                    <Link to="/cart"><BiShoppingBag /></Link>
+                    <Link to="/wishlist" className='relative'><BiHeart /><span className='absolute bg-[#FF9F0D] text-xs rounded-full -top-4 -right-4 w-[25px] h-[25px] flex justify-center items-center'>{state.wishlist.length}</span></Link>
+            <Link to="/cart" className='relative'><BiShoppingBag/><span className='absolute bg-[#FF9F0D] text-xs rounded-full -top-4 -right-4 w-[25px] h-[25px] flex justify-center items-center'>{state.cart.length}</span></Link>
                 </div>
                 <button className='h-[40px] w-[40px]' onClick={() => setShow(!show)}><RxHamburgerMenu /></button>
             </nav>

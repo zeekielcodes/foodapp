@@ -36,13 +36,11 @@ function Profile() {
             <div>
                 <Banner pageName="My Account" page="Profile" />
                 <div className="profile">
-                    <div className="controls">
+                    <div className="controls mb-4">
                         <button onClick={() => setDisplay(true)} className={display ? "text-[#FF9F0D] shadow" : "text-black"}>Profile</button>
                         <button onClick={() => setDisplay(false)} className={!display ? "text-[#FF9F0D] shadow" : "text-black"}>Orders</button>
                         <button onClick={logOut}>Log out</button>
                     </div>
-
-                    {state.user.email}
                     {display ?
                         <UserProfile /> :
                         <UserOrders />}

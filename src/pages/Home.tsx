@@ -9,6 +9,7 @@ import cat from "../assets/images/cat.png"
 import cat1 from "../assets/images/cat1.png"
 import cat2 from "../assets/images/cat2.png"
 import cat4 from "../assets/images/cat4.png"
+import MidMenuBanner from '../components/MidMenuBanner'
 
 function Home() {
   return (
@@ -54,6 +55,7 @@ function Home() {
           <img src={cat4} alt="" />
         </div>
       </div>
+      <MidMenuBanner />
     </div>
   )
 }

@@ -19,6 +19,7 @@ interface Props {
 function SingleShopFood({id, name, image, price, mainPrice, description, category, ratings}:Props) {
  const {state, dispatch} = useStateContext()
   const addToCart = () => {
+    window.navigator.vibrate(1000)
     const item = {
       id,
       name,
@@ -47,7 +48,7 @@ function SingleShopFood({id, name, image, price, mainPrice, description, categor
   }
 
   const addToWishlist = () => {
-    
+    window.navigator.vibrate(500)
     const item = {
       id,
       name,

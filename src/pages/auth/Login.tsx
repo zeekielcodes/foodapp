@@ -18,6 +18,7 @@ function Login() {
         signInWithEmailAndPassword(auth, user.email, user.password)
         .then(userCredential => {
             const user = userCredential.user
+            window.navigator.vibrate(1000)
             const modalContent = {
                 title: "Logged in",
                 text: "Account logged in successfully"

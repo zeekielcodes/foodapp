@@ -189,7 +189,7 @@ section.time div p {
 }
 
 .menu h2 {
-  @apply text-[48px] font-BoldHelvetica mb-2
+  @apply text-[36px] lg:text-[48px] font-BoldHelvetica mb-2
 }
 
 .each-menu {
@@ -213,7 +213,7 @@ section.time div p {
 }
 
 .nameNprice h3 {
-  @apply text-[24px] hover:text-[#FF9F0D]
+  @apply text-[18px] lg:text-[24px] hover:text-[#FF9F0D]
 }
 
 .singlemenu {
@@ -253,15 +253,19 @@ section.time div p {
 }
 
 .mid-menu .overlay {
-  @apply flex justify-between font-BoldHelvetica px-2 md:px-12 py-4 lg:px-40 text-center text-white items-center absolute top-0 left-0 bottom-0 right-0 bg-[rgba(0,0,0,0.7)]
+  @apply flex flex-wrap gap-2 justify-center lg:justify-between font-BoldHelvetica px-2 md:px-12 py-4 lg:px-40 text-center text-white items-center absolute top-0 left-0 bottom-0 right-0 bg-[rgba(0,0,0,0.7)]
 }
 
 .mid-menu .overlay div {
-  @apply w-1/5 lg:w-auto text-center
+  @apply w-[47%] lg:w-auto text-center flex flex-col justify-center items-center
+}
+
+.mid-menu .overlay div img {
+  @apply h-[70px]
 }
 
 .mid-menu .overlay div h5 {
-  @apply my-2 text-[30px] lg:text-[40px]
+  @apply md:my-2 text-[30px] lg:text-[40px]
 }
 
 .chefs {

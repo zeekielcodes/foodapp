@@ -25,7 +25,7 @@ function Wishlist() {
                                 <p className='flex items-center text-[#E0E0E0]'>{Array.from({ length: 5 - item.ratings }).map(() => <span><AiFillStar /></span>)}</p>
                             </div>
                             <button className='text-[#FF9F0D]' onClick={() => dispatch({type:"AddToCart", payload:item})}><BiShoppingBag /> Move to Cart</button>
-                            <button className='text-red-600' onClick={(() => dispatch({type:"removeFromWishlist", payload:item}))}><BiTrash /> Remove from Wishlist</button>
+                            <button className='text-red-600' onClick={(() => dispatch({type:"removeFromWishlist", payload:item}))}><BiTrash /> Remove</button>
                         </div>
 
                     </div>

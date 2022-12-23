@@ -24,6 +24,7 @@ function SignUp() {
                     title: "Account created",
                     text: "Account created successfully"
                 }
+                window.navigator.vibrate(1000)
                 dispatch({ type: "OPEN_MODAL", payload: modalContent })
                 const createdUser = userCredential.user;
                 setDoc(doc(db, "users", createdUser.uid), {

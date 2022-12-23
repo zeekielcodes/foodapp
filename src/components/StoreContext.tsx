@@ -11,7 +11,8 @@ interface State {
   modalContent: Modal,
   cart: Product[],
   wishlist: Product[],
-  totalAmount: number
+  totalAmount: number,
+  discount: number
 }
 
 interface Action {
@@ -30,7 +31,7 @@ interface Modal {
 }
 
 
-const initial: { isAuthenticated: boolean, user: any, showModal: boolean, coupon: any, modalContent: Modal, cart: Product[], wishlist: Product[], totalAmount: number } = {
+const initial: { isAuthenticated: boolean, user: any, showModal: boolean, coupon: any, modalContent: Modal, cart: Product[], wishlist: Product[], totalAmount: number, discount: number } = {
   isAuthenticated: false,
   user: null,
   showModal: false,
@@ -41,7 +42,8 @@ const initial: { isAuthenticated: boolean, user: any, showModal: boolean, coupon
   },
   cart: [],
   wishlist: [],
-  totalAmount: 0
+  totalAmount: 0,
+  discount: 0
 }
 
 
@@ -149,7 +151,7 @@ const reducer = (state: State, action: Action) => {
               text: `$${action.payload.discount} has been deducted from your cart total`
             },
             coupon: action.payload,
-            totalAmount: state.totalAmount - discount
+            discount: discount
           }
 
         case "percentage":
@@ -162,7 +164,7 @@ const reducer = (state: State, action: Action) => {
               text: `${action.payload.discount}% has been deducted from your cart total`
             },
             coupon: action.payload,
-            totalAmount: state.totalAmount - reduction
+            discount: reduction
           }
 
 

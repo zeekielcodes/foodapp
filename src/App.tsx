@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import Footer from './components/Footer'
 import Nav from './components/Nav'
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import {BrowserRouter as Router, Routes, Route, useLocation} from "react-router-dom"
 import Home from './pages/Home'
 import Menu from './pages/Menu'
 import Contact from './pages/Contact'
@@ -23,9 +23,12 @@ import { Product } from './components/model'
 import Modal from './components/Modal'
 import MobileNav from './components/MobileNav'
 import Profile from './pages/auth/Profile'
+import { auth } from './firebase'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
  const {state, dispatch} = useStateContext()
+
   
   useEffect(() => {
     const savedCart = localStorage.getItem("cart")
@@ -54,12 +57,23 @@ function App() {
     
   }, [state])
 
+  useEffect(() => {
+    auth.onAuthStateChanged(user => {
+      if(user) {
+        dispatch({type:"LOGGED_IN", payload:user})
+      } else {
+        dispatch({type:"LOGGED_OUT"})
+      }
+    })
+  },[])
+
+
   return (
     <main>
       {state.showModal && <Modal /> }
       <Router>
         {window.innerWidth < 480 ? <MobileNav /> : <Nav />}
-      
+      <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
