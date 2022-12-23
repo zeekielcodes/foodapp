@@ -52,14 +52,14 @@ function ProductDetails() {
         const found = foods.products.find(item => item.id === parseInt(id))
         const modalContent = {
           title: "Added to Cart",
-          text: `${found?.name} has been added to cart successfully`
+          text: `${quantity} x ${found?.name} has been added to cart successfully`
         }
         dispatch({type:"AddToCart", payload: {...found, quantity}})
         dispatch({type:"OPEN_MODAL", payload:modalContent})
       } else {
         const modalContent = {
           title: "Cart item updated",
-          text: `Quantity of ${there.name} in cart has been increased`
+          text: `Quantity of ${there.name} in cart has been increased by ${quantity}`
         }
         dispatch({type:"UpdateCart", payload: {...there, quantity}})
         dispatch({type:"OPEN_MODAL", payload:modalContent})

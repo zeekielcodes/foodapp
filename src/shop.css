@@ -70,6 +70,10 @@
     @apply w-[47%] lg:w-[31%] 
 }
 
+.foods .each-food img {
+    @apply h-[150px] md:h-[200px] lg:h-[250px] w-full
+}
+
 .foods .each-food .thumbnail {
     @apply relative
 }

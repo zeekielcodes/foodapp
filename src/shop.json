@@ -84,6 +84,96 @@
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
             "category": "Chicken Chup",
             "ratings": 2
+        },
+        {
+            "id": 10,
+            "name": "Spaghetti",
+            "image": "spaghetti.jpg",
+            "price": 25,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
+            "category": "Pasta",
+            "ratings": 4
+        },
+        {
+            "id": 11,
+            "name": "Pounded Yam",
+            "image": "egusi.jpg",
+            "price": 30,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
+            "category": "Swallow",
+            "ratings": 3
+        },
+        {
+            "id": 12,
+            "name": "Chips",
+            "image": "home-food.png",
+            "price": 10,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
+            "category": "Appetizer",
+            "ratings": 5
+        },
+        {
+            "id": 13,
+            "name": "Cake",
+            "image": "breakfast.jpg",
+            "price": 6,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
+            "category": "Appetizer",
+            "ratings": 4
+        },
+        {
+            "id": 14,
+            "name": "Beans",
+            "image": "beans-plantain.jpg",
+            "price": 8,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
+            "category": "Protein",
+            "ratings": 5
+        },
+        {
+            "id": 15,
+            "name": "Burger",
+            "image": "cat1.png",
+            "price": 28,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
+            "category": "Appetizer",
+            "ratings": 5
+        },
+        {
+            "id": 16,
+            "name": "Slime",
+            "image": "cat2.png",
+            "price": 10,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
+            "category": "Snacks",
+            "ratings": 5
+        },
+        {
+            "id": 17,
+            "name": "Doughnut",
+            "image": "cat4.png",
+            "price": 15,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
+            "category": "Snacks",
+            "ratings": 5
+        },
+        {
+            "id": 18,
+            "name": "Coffee",
+            "image": "coffee3.png",
+            "price": 12,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
+            "category": "Beverages",
+            "ratings": 5
+        },
+        {
+            "id": 19,
+            "name": "Italino Coffee",
+            "image": "coffee4.png",
+            "price": 18,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
+            "category": "Beverages",
+            "ratings": 5
         }
     ]
 }

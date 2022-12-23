@@ -128,6 +128,12 @@ const reducer = (state: State, action: Action) => {
 
       }
 
+    case "CLEAR_CART":
+      return {
+        ...state,
+        cart: []
+      }
+
     case "CLOSE_MODAL":
       return {
         ...state,

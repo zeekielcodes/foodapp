@@ -65,7 +65,7 @@ function Cart() {
               <div className="addCoupon">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non</p>
                 <form onSubmit={addCoupon}>
-                  <input type="text" name="coupon" value={coupon} onChange={(e) => setCoupon(e.target.value)} placeholder='Enter Coupon here...' id="coupon" />
+                  <input type="text" autoComplete='off' name="coupon" value={coupon} onChange={(e) => setCoupon(e.target.value)} placeholder='Enter Coupon here...' id="coupon" />
                   <button type="submit">Apply</button>
                 </form>
               </div>
@@ -79,7 +79,7 @@ function Cart() {
                 </div>
                 <div className='flex justify-between font-Inter text-[#4F4F4F] px-4 py-2 border-none'>
                   <h6>Shipping Charge</h6>
-                  <h6>$00.00</h6>
+                  <h6>Free</h6>
                 </div>
                 <div className='flex justify-between font-Inter text-[#4F4F4F] px-4 py-2 border-none'>
                   <h6>Discount</h6>

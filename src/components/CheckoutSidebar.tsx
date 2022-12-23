@@ -1,13 +1,16 @@
 import React from 'react'
 import { useStateContext } from './StoreContext'
 import { useFlutterwave } from 'flutterwave-react-v3'
+import { PaystackButton } from 'react-paystack'
 import closePaymentModal from 'flutterwave-react-v3/dist/closeModal';
+import { useNavigate } from 'react-router-dom';
 
 function CheckoutSidebar() {
     const {state, dispatch} = useStateContext()
+    const nav = useNavigate()
 
       const config = {
-            public_key: 'FLWPUBK_TEST-c90fdc1ac72df9d3783f81917093134c-X',
+            public_key: 'FLWPUBK-e2e24043de418c526a74dd9718917fe3-X',
             tx_ref: Date.now().toString(),
             amount: state.totalAmount - state.discount,
             currency: 'USD',
@@ -20,7 +23,7 @@ function CheckoutSidebar() {
             customizations: {
               title: 'FoodTuck Food App',
               description: 'Payment for items in cart',
-              logo: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGsAAAATCAYAAACXzvOgAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAV3SURBVHgB7RlbcttGDEvJM5pxnKonMHuCyCewdAP7BJYm7Ue/7JzA0glkf3WmL0onSHIC0yeQc4LSJ6jy6IymlrgFdkERJJe0LKmOMwlmKO1igV0QwALYpQIE/duzNjwE6vUb1ZtO4QmCDppNmM9bS8RTllVrkrPJ3UgpFVXR1/HlfIDFFTwEFjMff5+kAoyh6kq8z7yDPyG1UDmkmKUhUTkhfF4Y4tPm9gCffhVxHb4uIENJx1TwBYHLWBH6YFTJVWu8B5jBN3hcKBorjgfq5T8jWANMvpjNbAxuNKYPyRX6l4aftNXPswgeALTuU8tLHHIp1G5Nrq2EQR3sdfHvBJNZGxo7jF0g/vkNxPpSvfw4cvOhcSE+xdYZpIkW8WYO5LkbqJ7bcLjmEf4hL8V8WmsP6dQI5vF1gdYqbijXYHzAzVekVO77jLtGXD9HT3O0KsabLFM3mQdx9BfiM0b6EawIyEfzHAnUaGNjoUGGrGzXaAs8CJBmX/U+DLJ8y8LGL5m6C7BzpIP6sep9CnNrnuNvP0fvG1xdvXHM1bTzudYw0AdbMLUhlSdy0LcgLQgy46hc4it7H+JpI80hGqwH9wAb6kKgyNDjorG8ml9VyqufUsXZHZUxFL0wKos8TNEc7Mm6j7TvVO+jUOSCvNQXIt4gDz700oYXLL96jYb9IQlz+tfdlsNQEa9FzxG4IeTxVg5H8B42B7krE5kiXi/Z0V00xHXVDsPxNmQNhToBo2PHztLn6J3nUA6ygjrPClc7WCq1uHPIOMZY7AxCqRrD3af+smfDahKimhDPSVg7vpOXTXeSncd8hXDH55cOK+JK4DuwBeB52wI1SEIk77iJkAnTBYV45zxE+1qgInw6Sd7zYF0BrcJ9genJJI/tCOzZIQFfB7xj6+pECiQNZXlNjguXCE+ditFMHJch0vBhjoTHBynTVOYydhTSQ8hPWcGxD9aRlodkEIYiWK90J/AyngT5vGKhhjtpESy7sTmxhyaXJRtUwztwQRy/Bc9rc6+pf2/sQ632fY7qbYHP07hmZWT4P+CFaN/kB1HhFNYu7pmjm+uP8zca2yrdIxeSdhqGJolpZv+pCX+7eNFQRQ+cI19GYu3w0p0pVYePDDLsbiP/EZxjWBxJg60dBnPQdCFtaf7YcPcZ1twaRLl+IDvrG8vLbNGmDnZbBRp5oWp5OERoESpUkc/CoWhP1Y+zW7yUjTIUNqzmBSubbxtQ5giRaL/ID+IOOaIzHD/Dijmo4JF5vs3Fi4ENdhblI5ksaycFkrosDIi2FppWrMXBVbf4gJtiTCWZyYmmiuSiJVpiPe/UsXs3yVcyrPpygJVW5gjyIO5LBQuZuvyUzZHkqIucHEFyG7L2odjkoz+fjTF7skH0GSody+wYCwbMN54pUdspB95kJNWitzPCvEJ8Pg/iWWoPKzl8aU9hVbToQkZZd6m3xXqMNIlBkGYx0X/s2grQI4fRPqwIqIQ+WOO/4aqLlJ4ok7yaymgqgL4D96E6gRFYgySOQwommWjOQ8gaaFwxD/BNyiWkTueDPWf1FZ+H/lpSx3Fv1QLDevViAuW3EIkI+E3pw0GWl8p4tcKnmewZzPI+n9iK0r1Wdkycw+z3o4mDyUcl3VaMJxBC6oAjeRuBvKTQIVTDJfKcCZ4rMd9Alvw4RjbxuUtGP9iowLA7pdbB8rvCW8hLvE6RlxQYkwGjEkacO36VN5QFr2RNHQL8ewxl8iqTMwf3jB87ZKI+vcNtBe8Fzx05hknZA2moFUBeS9GODbb2PYd3KHpm7FuMF1GOWuU23BYnWBjEGMJM4ULnvPu/8KZr0svoyH3WK+HVabh0faEVeWfKRlwZcvnNXMFt4/b9P7vtXVnhSEMdAAAAAElFTkSuQmCC',
+              logo: 'https://pbs.twimg.com/profile_images/1411109433132859397/m0Uq-zje_400x400.jpg',
             },
           };
         
@@ -29,16 +32,35 @@ function CheckoutSidebar() {
        const payWithFlutter = () => {
             pay({
                   callback: (response) => {
-                     console.log(response);
-                      closePaymentModal() // this will close the modal programmatically
+                    dispatch({type:"CLEAR_CART"})
+                    nav("/")
+                      // closePaymentModal() // this will close the modal programmatically
                   },
                   onClose: () => {},
                 });
        }
 
-       const payWithPayStack = () => {
-
-       }
+       const componentProps = {
+        email: state.user?.email,
+        amount: (state.totalAmount - state.discount) * 100,
+        metadata: {
+          name: state.user?.displayName,
+          phone: "090********",
+          custom_fields: [{
+            display_name: state.user?.displayName,
+            variable_name: "",
+            value: ""
+          }]
+        },
+        publicKey: "pk_test_cc3bbc2ac57f163bf4777d4d70b6120b9f4051a0",
+        text: "Pay with PayStack",
+        onSuccess: () => {
+          // alert("Thanks for doing business with us! Come back soon!!"),
+          dispatch({type:"CLEAR_CART"})
+          nav("/")
+        },
+        onClose: () => alert("Wait! Don't leave :("),
+      }
 
   return (
     <div>
@@ -70,9 +92,9 @@ function CheckoutSidebar() {
                   <h6>Total</h6>
                   <h6>${state.discount ? (state.totalAmount - state.discount).toFixed(2) : state.totalAmount}</h6>
             </div>
-          <button className='bg-[#FF9F0D] w-full text-white rounded h-[40px]' onClick={payWithFlutter}>Pay with Flutterwave</button>
-          <button className='bg-[#FF9F0D] w-full text-white rounded h-[40px]' onClick={payWithPayStack}>Pay with PayStack</button>
-          
+          <button className='bg-[#FF9F0D] w-full text-white rounded mb-2 h-[40px]' onClick={payWithFlutter}>Pay with Flutterwave</button>
+          <PaystackButton className='bg-blue-500 w-full text-white rounded h-[40px]'  {...componentProps} />
+
     </div>
   )
 }
