@@ -1,5 +1,5 @@
 .shop {
-    @apply p-4 md:px-12 lg:py-20 flex flex-col-reverse lg:flex-row gap-4
+    @apply p-4 md:px-12 lg:px-40 py-12 lg:py-20 flex flex-col-reverse lg:flex-row gap-4
 }
 
 .shop .store {
@@ -71,7 +71,7 @@
 }
 
 .foods .each-food img {
-    @apply h-[150px] md:h-[200px] lg:h-[250px] w-full
+    @apply h-[140px] md:h-[200px] lg:h-[200px] w-full
 }
 
 .foods .each-food .thumbnail {

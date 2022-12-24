@@ -1,12 +1,14 @@
+import { doc, setDoc } from 'firebase/firestore/lite'
 import React, { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import Banner from '../components/Banner'
 import CheckoutSidebar from '../components/CheckoutSidebar'
 import SignInFirst from '../components/SignInFirst'
 import { useStateContext } from '../components/StoreContext'
+import { db } from '../firebase'
 
 function Checkout() {
-  const { state } = useStateContext()
+  const { state, dispatch } = useStateContext()
   const [billing, setBilling] = useState({
     address1: "",
     address2: "",
@@ -17,11 +19,22 @@ function Checkout() {
   })
   const nav = useNavigate()
 
-  console.log(billing);
-
   const submitShipping = (e:React.FormEvent) => {
     e.preventDefault()
-    console.log(billing);
+    setDoc(doc(db, "shipping", state.user.uid), {
+      address1: billing.address1,
+      address2: billing.address2,
+      phone: billing.phone,
+      city: billing.city,
+      state: billing.state,
+      postal: billing.postal
+  })
+  .then(() => {
+    const modalContent = {
+      title: "Shipping Address saved",
+      text: "Your shipping address has been saved"
+    }
+    dispatch({type:"OPEN_MODAL", payload:modalContent})
     setBilling({
       address1: "",
       address2: "",
@@ -30,6 +43,14 @@ function Checkout() {
       state: "",
       postal: 0
     })
+  })
+  .catch(() => {
+    const modalContent = {
+      title: "An error occured!",
+      text: "Couldn't save your shipping address, try again."
+    }
+    dispatch({type:"OPEN_MODAL", payload:modalContent})
+  })
     
   }
 

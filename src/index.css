@@ -37,7 +37,7 @@ h2 {
 }
 
 nav {
-  @apply bg-[#0D0D0D] text-white flex justify-between items-center px-40 py-4
+  @apply bg-[#0D0D0D] text-white flex justify-between items-center px-12 lg:px-40 py-4
 }
 
 nav.mobile {
@@ -77,7 +77,7 @@ nav .icons {
 }
 
 footer {
-  @apply bg-[#0D0D0D] text-white px-4 md:px-12 lg:py-8
+  @apply bg-[#0D0D0D] text-white px-4 md:px-12 lg:px-40 lg:py-8
 }
 
 footer .newsletter {
@@ -129,7 +129,7 @@ footer .footer div {
 }
 
 .acknowledgement {
-  @apply flex flex-col-reverse gap-4 lg:flex-row justify-between items-center bg-[#4F4F4F] text-white px-4 md:px-12 py-4 lg:py-6
+  @apply flex flex-col-reverse gap-4 lg:flex-row justify-between items-center bg-[#4F4F4F] text-white px-4 md:px-12 lg:px-40 py-4 lg:py-6
 }
 
 .acknowledgement .socials {

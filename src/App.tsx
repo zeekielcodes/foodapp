@@ -72,7 +72,7 @@ function App() {
     <main>
       {state.showModal && <Modal /> }
       <Router>
-        {window.innerWidth < 480 ? <MobileNav /> : <Nav />}
+        {window.innerWidth < 640 ? <MobileNav /> : <Nav />}
       <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />

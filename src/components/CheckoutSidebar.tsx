@@ -69,7 +69,7 @@ function CheckoutSidebar() {
                 <img src={require(`../assets/images/${item.image}`)} alt="" />
                 <div className="details">
                     <h4>{item.name}</h4>
-                    <h5>{(item.price).toFixed(2)}$ &nbsp;x &nbsp;{item.quantity}</h5>
+                    <h5>${(item.price).toFixed(2)} &nbsp;x &nbsp;{item.quantity}</h5>
                 </div>
                 
               </div>

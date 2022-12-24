@@ -1,5 +1,5 @@
 .checkout {
-    @apply px-4 md:px-12 py-4 lg:py-20 flex flex-col lg:flex-row gap-4
+    @apply px-4 md:px-12 lg:px-40 py-4 lg:py-20 flex flex-col lg:flex-row gap-4
 }
 
 .checkout section.form {
