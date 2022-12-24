@@ -1,5 +1,5 @@
-import { doc, setDoc } from 'firebase/firestore/lite'
-import React, { useState } from 'react'
+import { doc, setDoc, getDoc } from 'firebase/firestore/lite'
+import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import Banner from '../components/Banner'
 import CheckoutSidebar from '../components/CheckoutSidebar'
@@ -21,38 +21,65 @@ function Checkout() {
 
   const submitShipping = (e:React.FormEvent) => {
     e.preventDefault()
-    setDoc(doc(db, "shipping", state.user.uid), {
-      address1: billing.address1,
-      address2: billing.address2,
-      phone: billing.phone,
-      city: billing.city,
-      state: billing.state,
-      postal: billing.postal
-  })
-  .then(() => {
-    const modalContent = {
-      title: "Shipping Address saved",
-      text: "Your shipping address has been saved"
-    }
-    dispatch({type:"OPEN_MODAL", payload:modalContent})
-    setBilling({
-      address1: "",
-      address2: "",
-      phone: 0,
-      city: "",
-      state: "",
-      postal: 0
+    if(billing.address1 && billing.city && billing.phone && billing.postal && billing.state) {
+      setDoc(doc(db, "shipping", state.user.uid), {
+        address1: billing.address1,
+        address2: billing.address2,
+        phone: billing.phone,
+        city: billing.city,
+        state: billing.state,
+        postal: billing.postal
     })
-  })
-  .catch(() => {
-    const modalContent = {
-      title: "An error occured!",
-      text: "Couldn't save your shipping address, try again."
+    .then(() => {
+      const modalContent = {
+        title: "Shipping Address saved",
+        text: "Your shipping address has been saved"
+      }
+      dispatch({type:"OPEN_MODAL", payload:modalContent})
+      setBilling({
+        address1: "",
+        address2: "",
+        phone: 0,
+        city: "",
+        state: "",
+        postal: 0
+      })
+    })
+    .catch(() => {
+      const modalContent = {
+        title: "An error occured!",
+        text: "Couldn't save your shipping address, try again."
+      }
+      dispatch({type:"OPEN_MODAL", payload:modalContent})
+    })
+    } else {
+      const modalContent = {
+        title: "Empty Field(s)",
+        text: "Please fill the input fields"
+      }
+      dispatch({type:"OPEN_MODAL", payload:modalContent})
     }
-    dispatch({type:"OPEN_MODAL", payload:modalContent})
-  })
+    
     
   }
+
+useEffect(() => {
+
+
+const docRef = doc(db, "shipping", state.user.uid);
+const docSnap = getDoc(docRef);
+
+if (docSnap) {
+  docSnap.then((response) => {
+    console.log(response.data);
+    
+  })
+  console.log("Document data:", docSnap);
+} else {
+  // doc.data() will be undefined in this case
+  console.log("No such document!");
+}
+  }, [])
 
   return (
     <div>
