@@ -1,4 +1,23 @@
-# Getting Started with Create React App
+# FoodTuck Food App
+
+## Screenshot
+
+![](./src/assets/images/screenshot.png)
+
+## Web version
+
+- Visit [here](https://foodtucks.web.app)
+
+### Built with
+
+- HTML
+- Tailwind CSS
+- React JS
+- TypeScript
+- Firebase
+
+
+### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

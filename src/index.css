@@ -97,11 +97,11 @@ footer .cta p {
 }
 
 footer .newsletter form {
-  @apply h-[45px] flex rounded overflow-hidden
+  @apply h-[45px] flex rounded overflow-hidden bg-[#FF9F0D]
 }
 
 footer .newsletter form input {
-  @apply h-full w-[250px] bg-[#FF9F0D] border-none placeholder:text-white outline-none text-white pl-4
+  @apply h-full w-[250px] bg-none bg-transparent border-none placeholder:text-white outline-none text-white pl-4
 }
 
 footer .newsletter form button {

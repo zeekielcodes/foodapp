@@ -34,7 +34,7 @@ function MobileNav() {
                         <li className='py-4 w-full text-center hover:bg-white hover:text-black'><NavLink to="/" end>Home</NavLink></li>
                         <li className='py-4 w-full text-center hover:bg-white hover:text-black'><NavLink to="/menu">Menu</NavLink></li>
                         <li className='py-4 w-full text-center hover:bg-white hover:text-black'><NavLink to="/blog">Blog</NavLink></li>
-                        <li className='py-4 w-full text-center hover:bg-white hover:text-black'><NavLink to="/pages">Pages</NavLink></li>
+                        <li className='py-4 w-full text-center hover:bg-white hover:text-black'><NavLink to="/chefs">Chefs</NavLink></li>
                         <li className='py-4 w-full text-center hover:bg-white hover:text-black'><NavLink to="/about">About</NavLink></li>
                         <li className='py-4 w-full text-center hover:bg-white hover:text-black'><NavLink to="/shop">Shop</NavLink></li>
                         <li className='py-4 w-full text-center hover:bg-white hover:text-black'><NavLink to="/contact">Contact</NavLink></li>

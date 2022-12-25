@@ -27,7 +27,7 @@ function Home() {
       <div className="hero bg-[#0D0D0D] text-white">
         <div className="hero-text">
           <h2><span className='text-[#FF9F0D]'>We</span> Create the best
-            foody product
+            food products
           </h2>
           <p className='text-white my-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.</p>
           <ul>

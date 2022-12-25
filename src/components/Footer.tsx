@@ -8,11 +8,11 @@ function Footer() {
     <footer>
         <div className="newsletter">
             <div className="cta">
-              <h4><span className='change'>St</span>ill You Need Our Support ?</h4>
+              <h4><span className='change'>St</span>ill Need Our Support ?</h4>
                 <p>Don’t wait make a smart & logical quote here. Its pretty easy.</p> 
             </div>
             <form>
-                <input type="email" placeholder='Enter Your Email' name="email" id="email" />
+                <input type="email" autoComplete='off' placeholder='Enter Your Email' name="email" id="email" />
                 <button type='submit'>Subscribe</button>
             </form>
         </div>
@@ -60,16 +60,16 @@ function Footer() {
             <a href="http://facebook.com">
                 <ImFacebook />
             </a>
-            <a href="http://facebook.com">
+            <a href="http://twitter.com">
                 <BsTwitter />
             </a>
-            <a href="http://facebook.com">
+            <a href="http://instagram.com">
                 <BsInstagram />
             </a>
-            <a href="http://facebook.com">
+            <a href="http://youtube.com">
                 <BsYoutube />
             </a>
-            <a href="http://facebook.com">
+            <a href="http://pinterest.com">
                 <BsPinterest />
             </a>
 

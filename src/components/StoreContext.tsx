@@ -121,6 +121,7 @@ const reducer = (state: State, action: Action) => {
       }
 
     case "OPEN_MODAL":
+      window.navigator.vibrate(1000)
       return {
         ...state,
         showModal: true,
@@ -145,7 +146,6 @@ const reducer = (state: State, action: Action) => {
       }
 
     case "ADD_COUPON":
-      console.log(state);
       switch (action.payload.type) {
         case "flat":
           const discount = action.payload.discount
@@ -181,8 +181,6 @@ const reducer = (state: State, action: Action) => {
 
 
     case "LOGGED_IN":
-      console.log(action.payload);
-
       return {
         ...state,
         isAuthenticated: true,
