@@ -56,23 +56,23 @@ function Checkout() {
     
   }
 
-useEffect(() => {
+// useEffect(() => {
 
 
-const docRef = doc(db, "shipping", state.user.uid);
-const docSnap = getDoc(docRef);
+// const docRef = doc(db, "shipping", state.user.uid);
+// const docSnap = getDoc(docRef);
 
-if (docSnap) {
-  docSnap.then((response) => {
-    console.log(response.data);
+// if (docSnap) {
+//   docSnap.then((response) => {
+//     console.log(response.data);
     
-  })
-  console.log("Document data:", docSnap);
-} else {
-  // doc.data() will be undefined in this case
-  console.log("No such document!");
-}
-  }, [])
+//   })
+//   console.log("Document data:", docSnap);
+// } else {
+//   // doc.data() will be undefined in this case
+//   console.log("No such document!");
+// }
+//   }, [])
 
   return (
     <div>
