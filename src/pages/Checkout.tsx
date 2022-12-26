@@ -22,14 +22,7 @@ function Checkout() {
   const submitShipping = (e:React.FormEvent) => {
     e.preventDefault()
     if(billing.address1 && billing.city && billing.phone && billing.postal && billing.state) {
-      setDoc(doc(db, "shipping", state.user.uid), {
-        address1: billing.address1,
-        address2: billing.address2,
-        phone: billing.phone,
-        city: billing.city,
-        state: billing.state,
-        postal: billing.postal
-    })
+      setDoc(doc(db, "shipping", state.user.uid), billing)
     .then(() => {
       const modalContent = {
         title: "Shipping Address saved",
